@@ -161,16 +161,16 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           }else if(maxi === "7"){
             maxiArea = int9
           }
-          document.getEleentById("title").innerHTML = control.Title
-          document.getEleentById("date").innerHTML = dateRP + "発行"
+          document.getElementById("title").innerHTML = control.Title
+          document.getElementById("date").innerHTML = dateRP + "発行"
           if(hypo !== "調査中" && maxi !== "調査中"){
-            document.getEleentById("body").innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、最大震度" + maxi + "の地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。" + coment2 + "各地の震度です。" + intArea
+            document.getElementById("body").innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、最大震度" + maxi + "の地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。" + coment2 + "各地の震度です。" + intArea
           }else if(hypo !== "調査中"){
-            document.getEleentById("body").innerHTML = dateQuake + "ころ、最大震度" + maxi + "の地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。" + coment2 + "各地の震度です。" + intArea
+            document.getElementById("body").innerHTML = dateQuake + "ころ、最大震度" + maxi + "の地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。" + coment2 + "各地の震度です。" + intArea
           }else if(maxi !== "調査中"){
-            document.getEleentById("body").innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、地震がありました。地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。" + coment2 + "各地の震度です。" + intArea
+            document.getElementById("body").innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、地震がありました。地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。" + coment2 + "各地の震度です。" + intArea
           }else {
-            document.getEleentById("body").innerHTML = "入電情報がありません。"
+            document.getElementById("body").innerHTML = "入電情報がありません。"
           }
         }else if(head.Title === "震度速報"){
           let intArea
@@ -213,9 +213,9 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           }else if(maxi === "7"){
             maxiArea = int9
           }
-          document.getEleentById("title").innerHTML = control.Title
-          document.getEleentById("date").innerHTML = dateRP + "発行"
-          document.getEleentById("body").innerHTML = dateQuake + "ころ、最大震度" + maxi + "を観測する地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。マグニチュード・震源の深さは現在調査中です。" + coment2 + "各地の震度です。" + intArea
+          document.getElementById("title").innerHTML = control.Title
+          document.getElementById("date").innerHTML = dateRP + "発行"
+          document.getElementById("body").innerHTML = dateQuake + "ころ、最大震度" + maxi + "を観測する地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。マグニチュード・震源の深さは現在調査中です。" + coment2 + "各地の震度です。" + intArea
         }else if(head.Title === "震源速報"){
           let intArea
           let maxiArea
@@ -257,18 +257,18 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           }else if(maxi === "7"){
             maxiArea = int9
           }
-          document.getEleentById("title").innerHTML = control.Title
-          document.getEleentById("date").innerHTML = dateRP + "発行"
-          document.getEleentById("body").innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、地震がありました。地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。" + coment2
+          document.getElementById("title").innerHTML = control.Title
+          document.getElementById("date").innerHTML = dateRP + "発行"
+          document.getElementById("body").innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、地震がありました。地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。" + coment2
           }else if(head.Title === "遠地地震に関する情報"){
-          document.getEleentById("title").innerHTML = head.Title
-          document.getEleentById("date").innerHTML = dateRP + "発行"
+          document.getElementById("title").innerHTML = head.Title
+          document.getElementById("date").innerHTML = dateRP + "発行"
           if(dateQuake !== "調査中"){
-            document.getEleentById("body").innerHTML = dateQuake + "ころ、海外" + hypo + "を震源とする、地震がありました。地震の規模を示すマグニチュードは、" + mg + "です。" + coment2
+            document.getElementById("body").innerHTML = dateQuake + "ころ、海外" + hypo + "を震源とする、地震がありました。地震の規模を示すマグニチュードは、" + mg + "です。" + coment2
           }else if(dateQuake === "調査中"){
-            document.getEleentById("body").innerHTML = coment1 + "震源地は、" + hypo + "を震源とする、地震がありました。地震の規模を示すマグニチュードは、" + mg + "です。" + coment2
+            document.getElementById("body").innerHTML = coment1 + "震源地は、" + hypo + "を震源とする、地震がありました。地震の規模を示すマグニチュードは、" + mg + "です。" + coment2
           }else {
-            document.getEleentById("body").innerHTML = "入電情報なし"
+            document.getElementById("body").innerHTML = "入電情報なし"
           }
         }
         }
