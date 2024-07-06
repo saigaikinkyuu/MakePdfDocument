@@ -17,7 +17,7 @@ function searchQuake(){
         if(field1 !== ""){
           for(var s = 0;s<data.length;s++){
             if(date(data[s].at) === date(field1)){
-              settingQuake(s,n)
+              settingField(s,n)
               s = data.length
             }
           }
@@ -26,7 +26,7 @@ function searchQuake(){
         if(field2 !== ""){
           for(var s = 0;s<data.length;s++){
             if(date(data[s].at) === date(field2)){
-              settingQuake(s,n)
+              settingField(s,n)
               s = data.length
             }
           }
@@ -35,7 +35,7 @@ function searchQuake(){
         if(field3 !== ""){
           for(var s = 0;s<data.length;s++){
             if(date(data[s].at) === date(field3)){
-              settingQuake(s,n)
+              settingField(s,n)
               s = data.length
             }
           }
@@ -44,7 +44,7 @@ function searchQuake(){
         if(field4 !== ""){
           for(var s = 0;s<data.length;s++){
             if(date(data[s].at) === date(field4)){
-              settingQuake(s,n)
+              settingField(s,n)
               s = data.length
             }
           }
