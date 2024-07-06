@@ -38,7 +38,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
               dateQuake = head.Headline.OriginTime
             }
             if(body.Earthquake.Magnitude){
-              mg = head.Headline.Magnitude
+              mg = body.Earthquake.Magnitude
             }
             if(body.Earthquake.Hypocenter){
               if(body.Earthquake.Hypocenter.Area){
