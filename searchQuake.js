@@ -1,8 +1,8 @@
 function searchQuake(){
-  let field1 = document.getElementById("field1").textContent
-  let field2 = document.getElementById("field2").textContent
-  let field3 = document.getElementById("field3").textContent
-  let field4 = document.getElementById("field4").textContent
+  let field1 = document.getElementById("field1").value
+  let field2 = document.getElementById("field2").value
+  let field3 = document.getElementById("field3").value
+  let field4 = document.getElementById("field4").value
   for(var n = 0;n<4;n++){
     $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
       function date(time){
