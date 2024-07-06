@@ -17,8 +17,9 @@ function searchQuake(){
         if(field1 !== ""){
           for(var s = 0;s<data.length;s++){
             if(date(data[s].at) === date(field1)){
-              settingField(s,n)
+              document.getElementById("content" + s).style.display = "block"
               s = data.length
+              settingField(s,n)
             }
           }
         }
@@ -26,8 +27,9 @@ function searchQuake(){
         if(field2 !== ""){
           for(var s = 0;s<data.length;s++){
             if(date(data[s].at) === date(field2)){
-              settingField(s,n)
+              document.getElementById("content" + s).style.display = "block"
               s = data.length
+              settingField(s,n)
             }
           }
         }
@@ -35,8 +37,9 @@ function searchQuake(){
         if(field3 !== ""){
           for(var s = 0;s<data.length;s++){
             if(date(data[s].at) === date(field3)){
-              settingField(s,n)
+              document.getElementById("content" + s).style.display = "block"
               s = data.length
+              settingField(s,n)
             }
           }
         }
@@ -44,8 +47,9 @@ function searchQuake(){
         if(field4 !== ""){
           for(var s = 0;s<data.length;s++){
             if(date(data[s].at) === date(field4)){
-              settingField(s,n)
+              document.getElementById("content" + s).style.display = "block"
               s = data.length
+              settingField(s,n)
             }
           }
         }
