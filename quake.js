@@ -122,7 +122,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           }
           if(control.Title){
           if(head.Title === "震源・震度情報"){
-          let intArea
+          let intArea = ""
           let maxiArea
           if(int9 !== ""){
             intArea += "震度7を観測した地域は、" + int9
