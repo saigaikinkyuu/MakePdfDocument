@@ -1,5 +1,5 @@
 $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
-  $.getJSON("https://www.jma.go.jp/bosai/quake/data/" + data[0].json + ".json", function (areaData) { 
+  $.getJSON("https://www.jma.go.jp/bosai/quake/data/" + data[0].json, function (areaData) { 
 	function date(time){
 	  const year = new Date(time).getFullYear()
 	  const month = ("0" + new Date(time).getMonth()).slice(-2)
