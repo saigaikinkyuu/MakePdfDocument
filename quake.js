@@ -1,5 +1,6 @@
+function settingField(n){
 $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
-  $.getJSON("https://www.jma.go.jp/bosai/quake/data/" + data[0].json, function (areaData) { 
+  $.getJSON("https://www.jma.go.jp/bosai/quake/data/" + data[n].json, function (areaData) { 
 	function date(time){
 	  console.log(time)
 	  const year = new Date(time).getFullYear()
@@ -277,3 +278,4 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
     }
   })
 })
+}
