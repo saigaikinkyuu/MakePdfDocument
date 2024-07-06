@@ -9,6 +9,7 @@
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.js" defer></script>
   <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js" defer></script>
   <script src="./index.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <style>
     #content {
       margin: 20px;
@@ -47,23 +48,9 @@
 <body>
   <button id="button">Download PDF</button>
   <div id="content">
-    <h1>この枠内の内容をPDFに変換します！</h1>
-    <p>
-      [ Download PDF ]ボタンをクリックすると、<br>
-      PDFファイルのダウンロードを開始します。
-    </p>
-    <table>
-      <tr><th colspan="2">SAMPLE</th></tr>
-      <tr><th>No.1</th><td>A - a</td></tr>
-      <tr><th>No.2</th><td>B - b</td></tr>
-      <tr><th>No.3</th><td>C - c</td></tr>
-      <tr><th>No.4</th><td>D - d</td></tr>
-      <tr><th>No.5</th><td>E - e</td></tr>
-      <tr><th>No.6</th><td>F - f</td></tr>
-      <tr><th>No.7</th><td>G - g</td></tr>
-      <tr><th>No.8</th><td>H - h</td></tr>
-      <tr><th>No.9</th><td>I - i</td></tr>
-    </table>
+    <h3 id="title"></h3>
+    <p id="date" style="color:gray;"></p>
+    <p id="body"></p>
   </div>
 </body>
 </html>
