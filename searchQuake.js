@@ -1,10 +1,10 @@
 function searchQuake(){
-  console.log("成功")
   let field1 = document.getElementById("field1").value
   let field2 = document.getElementById("field2").value
   let field3 = document.getElementById("field3").value
   let field4 = document.getElementById("field4").value
   for(var n = 0;n<4;n++){
+    console.log(n)
     $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
       function date(time){
         let year = new Date(time).getFullYear()
@@ -14,6 +14,7 @@ function searchQuake(){
         let minute = ("0" + new Date(time).getMinutes()).slice(-2)
         return year + month + date + hour + minute
       }
+      console.log(data)
       if(n === 0){
         if(field1 !== ""){
           console.log(data)
