@@ -14,8 +14,8 @@ function searchQuake(){
         let minute = ("0" + new Date(time).getMinutes()).slice(-2)
         return year + month + date + hour + minute
       }
-      console.log(data)
       if(n === 0){
+        console.log(field1)
         if(field1 !== ""){
           console.log(data)
           for(var s = 0;s<data.length;s++){
