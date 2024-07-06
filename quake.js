@@ -55,36 +55,36 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
             if(body.Intensity.Observation){
               if(body.Intensity.Observation.MaxInt){
                 if(body.Intensity.Observation.MaxInt === "1"){
-                  let maxi = body.Intensity.Observation.MaxInt
+                  maxi = body.Intensity.Observation.MaxInt
                 }else if(body.Intensity.Observation.MaxInt === "2"){
-                  let maxi = body.Intensity.Observation.MaxInt
+                  maxi = body.Intensity.Observation.MaxInt
                 }else if(body.Intensity.Observation.MaxInt === "3"){
-                  let maxi = body.Intensity.Observation.MaxInt
+                  maxi = body.Intensity.Observation.MaxInt
                 }else if(body.Intensity.Observation.MaxInt === "4"){
-                  let maxi = body.Intensity.Observation.MaxInt
+                  maxi = body.Intensity.Observation.MaxInt
                 }else if(body.Intensity.Observation.MaxInt === "5-"){
-                  let maxi = "5弱"
+                  maxi = "5弱"
                 }else if(body.Intensity.Observation.MaxInt === "5+"){
-                  let maxi = "5強"
+                  maxi = "5強"
                 }else if(body.Intensity.Observation.MaxInt === "6-"){
-                  let maxi = "6弱"
+                  maxi = "6弱"
                 }else if(body.Intensity.Observation.MaxInt === "6+"){
-                  let maxi = "6強"
+                  maxi = "6強"
                 }else if(body.Intensity.Observation.MaxInt === "7"){
-                  let maxi = body.Intensity.Observation.MaxInt
+                  maxi = body.Intensity.Observation.MaxInt
                 }
               }
               if(body.Intensity.Observation.Pref){
                 let prefs = body.Intensity.Observation.Pref
-                let int1 = ""
-                let int2 = ""
-                let int3 = ""
-                let int4 = ""
-                let int5 = ""
-                let int6 = ""
-                let int7 = ""
-                let int8 = ""
-                let int9 = ""
+                var int1 = ""
+                var int2 = ""
+                var int3 = ""
+                var int4 = ""
+                var int5 = ""
+                var int6 = ""
+                var int7 = ""
+                var int8 = ""
+                var int9 = ""
                 for(var i = 0;i>prefs.length;i++){
                   let cities = prefs[i].Area
                   for(var c = 0;c>cities.length;c++){
