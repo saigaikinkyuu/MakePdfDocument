@@ -1,4 +1,5 @@
 function searchQuake(){
+  console.log("成功")
   let field1 = document.getElementById("field1").value
   let field2 = document.getElementById("field2").value
   let field3 = document.getElementById("field3").value
