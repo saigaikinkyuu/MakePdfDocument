@@ -86,12 +86,9 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
                 var int7 = ""
                 var int8 = ""
                 var int9 = ""
-		console.log(prefs)
-                for(var i = 0;i>prefs.length;i++){
+                for(var i = 0;i<prefs.length;i++){
                   let cities = prefs[i].Area
-		  console.log(cities)
-                  for(var c = 0;c>cities.length;c++){
-		    console.log(cities[c].MaxInt + "," + cities[c].Name)
+                  for(var c = 0;c<cities.length;c++){
                     if(cities[c].MaxInt === "1"){
                       int1 += cities[c].Name + " "
                     }else if(cities[c].MaxInt === "2"){
