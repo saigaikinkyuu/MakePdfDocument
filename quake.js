@@ -1,6 +1,7 @@
 $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
   $.getJSON("https://www.jma.go.jp/bosai/quake/data/" + data[0].json, function (areaData) { 
 	function date(time){
+	  console.log(time)
 	  const year = new Date(time).getFullYear()
 	  const month = ("0" + new Date(time).getMonth()).slice(-2)
 	  const date = ("0" + new Date(time).getDate()).slice(-2)
@@ -35,7 +36,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           }
           if(body.Earthquake){
             if(body.Earthquake.OriginTime){
-              dateQuake = head.Headline.OriginTime
+              dateQuake = date(head.Headline.OriginTime)
             }
             if(body.Earthquake.Magnitude){
               mg = body.Earthquake.Magnitude
@@ -132,7 +133,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           }else if(int6 !== ""){
             intArea += "震度5強を観測した地域は、" + int6
           }else if(int5 !== ""){
-            intArea += "震度75弱を観測した地域は、" + int5
+            intArea += "震度5弱を観測した地域は、" + int5
           }else if(int4 !== ""){
             intArea += "震度4を観測した地域は、" + int4
           }else if(int3 !== ""){
