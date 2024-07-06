@@ -15,6 +15,7 @@ function searchQuake(){
       }
       if(n === 0){
         if(field1 !== ""){
+          console.log(data)
           for(var s = 0;s<data.length;s++){
             console.log(Number(date(data[s].at)))
             if(Number(date(data[s].at)) === field1){
