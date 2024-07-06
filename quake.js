@@ -27,7 +27,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
             rpOffice = control.EditorialOffice
           }
           if(head.ReportDateTime){
-            dateRP = date(body.ReportDateTime)
+            dateRP = date(head.ReportDateTime)
           }
           if(head.Headline){
             if(head.Headline.Text){
@@ -36,7 +36,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           }
           if(body.Earthquake){
             if(body.Earthquake.OriginTime){
-              dateQuake = date(head.Headline.OriginTime)
+              dateQuake = date(body.Earthquake.OriginTime)
             }
             if(body.Earthquake.Magnitude){
               mg = body.Earthquake.Magnitude
@@ -89,6 +89,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
                 for(var i = 0;i>prefs.length;i++){
                   let cities = prefs[i].Area
                   for(var c = 0;c>cities.length;c++){
+		    console.log(cities[c].MaxInt + "," + cities[c].Name)
                     if(cities[c].MaxInt === "1"){
                       int1 += cities[c].Name + " "
                     }else if(cities[c].MaxInt === "2"){
