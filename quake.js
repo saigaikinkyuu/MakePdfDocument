@@ -278,4 +278,5 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
     }
   })
 })
+return "sccessfull"
 }
