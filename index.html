@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tsunami</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script src="./index.js"></script>
+  <style>
+    #content {
+      margin: 20px;
+      padding: 0 20px 20px;
+      border: 1px dashed;
+      width: 700px;
+    }
+
+    h1 {
+      color: navy;
+    }
+
+    table {
+      border: 1px solid silver;
+      width: 500px;
+      text-align: center;
+    }
+
+    tr:nth-child(even) {
+      background: aliceblue;
+    }
+
+    tr:nth-child(odd) {
+      background: whitesmoke;
+    }
+
+    th {
+      background-color: gainsboro;
+    }
+
+    th, td {
+      padding: 4px;  
+    }
+  </style>
+</head>
+<body>
+  <button id="button">Download PDF</button>
+
+  <div id="content">
+    <h1>この枠内の内容をPDFに変換します！</h1>
+    <p>
+      [ Download PDF ]ボタンをクリックすると、<br>
+      PDFファイルのダウンロードを開始します。
+    </p>
+    <table>
+      <tr><th colspan="2">SAMPLE</th></tr>
+      <tr><th>No.1</th><td>A - a</td></tr>
+      <tr><th>No.2</th><td>B - b</td></tr>
+      <tr><th>No.3</th><td>C - c</td></tr>
+      <tr><th>No.4</th><td>D - d</td></tr>
+      <tr><th>No.5</th><td>E - e</td></tr>
+      <tr><th>No.6</th><td>F - f</td></tr>
+      <tr><th>No.7</th><td>G - g</td></tr>
+      <tr><th>No.8</th><td>H - h</td></tr>
+      <tr><th>No.9</th><td>I - i</td></tr>
+    </table>
+  </div>
+</body>
+</html>
