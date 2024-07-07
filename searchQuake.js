@@ -19,8 +19,9 @@ function searchQuake(){
             console.log(Number(date(data[s].at)))
             if(Number(date(data[s].at)) === Number(field1)){
               document.getElementById("content0").style.display = "block"
+              let dataN = s
               s = data.length
-              settingField(s,0)
+              settingField(dataN,0)
             }
           }
         }
@@ -28,8 +29,9 @@ function searchQuake(){
           for(var s = 0;s<data.length;s++){
             if(Number(date(data[s].at)) === Number(field2)){
               document.getElementById("content1").style.display = "block"
+              let dataN = s
               s = data.length
-              settingField(s,1)
+              settingField(dataN,1)
             }
           }
         }
@@ -37,8 +39,9 @@ function searchQuake(){
           for(var s = 0;s<data.length;s++){
             if(Number(date(data[s].at)) === Number(field3)){
               document.getElementById("content2").style.display = "block"
+              let dataN = s
               s = data.length
-              settingField(s,2)
+              settingField(dataN,2)
             }
           }
         }
@@ -46,8 +49,9 @@ function searchQuake(){
           for(var s = 0;s<data.length;s++){
             if(Number(date(data[s].at)) === Number(field4)){
               document.getElementById("content3").style.display = "block"
+              let dataN = s
               s = data.length
-              settingField(s,3)
+              settingField(dataN,3)
             }
           }
         }
