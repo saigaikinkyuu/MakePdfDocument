@@ -14,7 +14,7 @@ function searchQuake(){
   for(var n = 0;n<4;n++){
     console.log(n)
     $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
-      if(n === 0){
+      if(n == 0){
         console.log(field1)
         if(field1 !== ""){
           console.log(data)
@@ -27,7 +27,7 @@ function searchQuake(){
             }
           }
         }
-      }else if(n === 1){
+      }else if(n == 1){
         if(field2 !== ""){
           for(var s = 0;s<data.length;s++){
             if(Number(date(data[s].at)) === field2){
@@ -37,7 +37,7 @@ function searchQuake(){
             }
           }
         }
-      }else if(n === 2){
+      }else if(n == 2){
         if(field3 !== ""){
           for(var s = 0;s<data.length;s++){
             if(Number(date(data[s].at)) === field3){
@@ -47,7 +47,7 @@ function searchQuake(){
             }
           }
         }
-      }else if(n === 3){
+      }else if(n == 3){
         if(field4 !== ""){
           for(var s = 0;s<data.length;s++){
             if(Number(date(data[s].at)) === field4){
