@@ -20,7 +20,7 @@ function searchQuake(){
             if(Number(date(data[s].at)) === Number(field1)){
               document.getElementById("content0").style.display = "block"
               s = data.length
-              settingField(s,n)
+              settingField(s,0)
             }
           }
         }
@@ -29,7 +29,7 @@ function searchQuake(){
             if(Number(date(data[s].at)) === Number(field2)){
               document.getElementById("content1").style.display = "block"
               s = data.length
-              settingField(s,n)
+              settingField(s,1)
             }
           }
         }
@@ -38,7 +38,7 @@ function searchQuake(){
             if(Number(date(data[s].at)) === Number(field3)){
               document.getElementById("content2").style.display = "block"
               s = data.length
-              settingField(s,n)
+              settingField(s,2)
             }
           }
         }
@@ -47,7 +47,7 @@ function searchQuake(){
             if(Number(date(data[s].at)) === Number(field4)){
               document.getElementById("content3").style.display = "block"
               s = data.length
-              settingField(s,n)
+              settingField(s,3)
             }
           }
         }
