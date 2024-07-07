@@ -239,7 +239,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           document.getElementById("title" + s).innerHTML = control.Title
           document.getElementById("date" + s).innerHTML = dateRP + "発行"
           document.getElementById("body" + s).innerHTML = dateQuake + "ころ、最大震度" + maxi + "を観測する地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。マグニチュード・震源の深さは現在調査中です。" + coment2 + "各地の震度です。" + intArea
-        }else if(head.Title === "震源速報"){
+        }else if(head.Title === "震源に関する情報"){
           let intArea = ""
           let maxiArea
           if(int9 !== ""){
