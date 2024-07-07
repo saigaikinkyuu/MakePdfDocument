@@ -17,7 +17,7 @@ function searchQuake(){
           console.log(data)
           for(var s = 0;s<data.length;s++){
             console.log(Number(date(data[s].at)))
-            if(Number(date(data[s].at)) === field1){
+            if(Number(date(data[s].at)) === Number(field1)){
               document.getElementById("content" + s).style.display = "block"
               s = data.length
               settingField(s,n)
@@ -26,7 +26,7 @@ function searchQuake(){
         }
         if(field2 !== ""){
           for(var s = 0;s<data.length;s++){
-            if(Number(date(data[s].at)) === field2){
+            if(Number(date(data[s].at)) === Number(field2)){
               document.getElementById("content" + s).style.display = "block"
               s = data.length
               settingField(s,n)
@@ -35,7 +35,7 @@ function searchQuake(){
         }
         if(field3 !== ""){
           for(var s = 0;s<data.length;s++){
-            if(Number(date(data[s].at)) === field3){
+            if(Number(date(data[s].at)) === Number(field3)){
               document.getElementById("content" + s).style.display = "block"
               s = data.length
               settingField(s,n)
@@ -44,7 +44,7 @@ function searchQuake(){
         }
         if(field4 !== ""){
           for(var s = 0;s<data.length;s++){
-            if(Number(date(data[s].at)) === field4){
+            if(Number(date(data[s].at)) === Number(field4)){
               document.getElementById("content" + s).style.display = "block"
               s = data.length
               settingField(s,n)
