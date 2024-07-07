@@ -26,8 +26,7 @@ function searchQuake(){
             }else {
               kindN = "05"
             }
-            console.log(Number(date(data[s].ctt) + kindN) + "," + Number(field1))
-            if(Number(date(data[s].ctt) + kindN) === Number(field1)){
+            if(Number(date(data[s].rdt) + kindN) === Number(field1)){
               document.getElementById("content0").style.display = "block"
               let dataN = s
               s = data.length
@@ -49,7 +48,7 @@ function searchQuake(){
             }else {
               kindN = "05"
             }
-            if(Number(date(data[s].ctt) + kindN) === Number(field2)){
+            if(Number(date(data[s].rdt) + kindN) === Number(field2)){
               document.getElementById("content1").style.display = "block"
               let dataN = s
               s = data.length
@@ -71,7 +70,7 @@ function searchQuake(){
             }else {
               kindN = "05"
             }
-            if(Number(date(data[s].ctt) + kindN) === Number(field3)){
+            if(Number(date(data[s].rdt) + kindN) === Number(field3)){
               document.getElementById("content2").style.display = "block"
               let dataN = s
               s = data.length
@@ -93,7 +92,7 @@ function searchQuake(){
             }else {
               kindN = "05"
             }
-            if(Number(date(data[s].ctt) + kindN) === Number(field4)){
+            if(Number(date(data[s].rdt) + kindN) === Number(field4)){
               document.getElementById("content3").style.display = "block"
               let dataN = s
               s = data.length
