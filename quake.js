@@ -11,6 +11,24 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
 	  const normalDate = year + "年" + month + "月" + date + "日 " + hour + "時" + minute + "分"
 	  return normalDate
 	}
+    let dataContent = ""
+    let kindN = ""
+    for(var b = 0;b<data.length;b++){
+      if(data[s].ttl == "震度速報"){
+	kindN = 01
+      }else if(data[s].ttl == "震源に関する情報"){
+	kindN = 02
+      }else if(data[s].ttl == "震源・震度情報"){
+	kindN = 03
+      }else if(data[s].ttl == "遠地地震に関する情報"){
+	kindN = 04
+      }else {
+	kindN = 05
+      }
+      document.getElementById('serect').innerHTML = ""
+      dataContent += "<option value='" + (data[b].eid).substring(0, 11) + kindN + "'>" + "[" + data[b].ttl + "]" + date(data[b].at) + "(" + data[b].anm + ")"
+    }
+    document.getElementById('serect').innerHTML = dataContent
     if(areaData.Control && areaData.Head && areaData.Body){
       let control = areaData.Control
       let head = areaData.Head
