@@ -33,6 +33,8 @@ function searchQuake(){
               settingField(dataN,0)
             }
           }
+        }else {
+          document.getElementById('content0').style.display = "none"
         }
         if(field2 !== ""){
           for(var s = 0;s<data.length;s++){
@@ -55,6 +57,8 @@ function searchQuake(){
               settingField(dataN,1)
             }
           }
+        }else {
+          document.getElementById('content1').style.display = "none"
         }
         if(field3 !== ""){
           for(var s = 0;s<data.length;s++){
@@ -77,6 +81,8 @@ function searchQuake(){
               settingField(dataN,2)
             }
           }
+        }else {
+          document.getElementById('content2').style.display = "none"
         }
         if(field4 !== ""){
           for(var s = 0;s<data.length;s++){
@@ -98,7 +104,9 @@ function searchQuake(){
               s = data.length
               settingField(dataN,3)
             }
-          }
+          }else {
+          document.getElementById('content3').style.display = "none"
+        }
         }
     })
 }
