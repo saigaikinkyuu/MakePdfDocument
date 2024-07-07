@@ -11,10 +11,7 @@ function searchQuake(){
   let field2 = document.getElementById("field2").value
   let field3 = document.getElementById("field3").value
   let field4 = document.getElementById("field4").value
-  for(var n = 0;n<4;n++){
-    console.log(n)
     $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
-      if(n == 0){
         console.log(field1)
         if(field1 !== ""){
           console.log(data)
@@ -27,7 +24,6 @@ function searchQuake(){
             }
           }
         }
-      }else if(n == 1){
         if(field2 !== ""){
           for(var s = 0;s<data.length;s++){
             if(Number(date(data[s].at)) === field2){
@@ -37,7 +33,6 @@ function searchQuake(){
             }
           }
         }
-      }else if(n == 2){
         if(field3 !== ""){
           for(var s = 0;s<data.length;s++){
             if(Number(date(data[s].at)) === field3){
@@ -47,7 +42,6 @@ function searchQuake(){
             }
           }
         }
-      }else if(n == 3){
         if(field4 !== ""){
           for(var s = 0;s<data.length;s++){
             if(Number(date(data[s].at)) === field4){
@@ -57,7 +51,5 @@ function searchQuake(){
             }
           }
         }
-      }
     })
-  }
 }
