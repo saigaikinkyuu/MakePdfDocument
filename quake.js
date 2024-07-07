@@ -2,7 +2,6 @@ function settingField(n,s){
 $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
   $.getJSON("https://www.jma.go.jp/bosai/quake/data/" + data[n].json, function (areaData) { 
 	function date(time){
-	  console.log(time)
 	  const year = new Date(time).getFullYear()
 	  const month = ("0" + new Date(time).getMonth()).slice(-2)
 	  const date = ("0" + new Date(time).getDate()).slice(-2)
