@@ -144,23 +144,31 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           let intArea = ""
           let maxiArea
           if(int9 !== ""){
-            intArea += "震度7を観測した地域は、" + int9
-          }else if(int8 !== ""){
-            intArea += "震度6強を観測した地域は、" + int8
-          }else if(int7 !== ""){
-            intArea += "震度6弱を観測した地域は、" + int7
-          }else if(int6 !== ""){
-            intArea += "震度5強を観測した地域は、" + int6
-          }else if(int5 !== ""){
-            intArea += "震度5弱を観測した地域は、" + int5
-          }else if(int4 !== ""){
-            intArea += "震度4を観測した地域は、" + int4
-          }else if(int3 !== ""){
-            intArea += "震度3を観測した地域は、" + int3
-          }else if(int2 !== ""){
-            intArea += "震度2を観測した地域は、" + int2
-          }else if(int1 !== ""){
-            intArea += "震度1を観測した地域は、" + int1
+            intArea += "震度7を観測した地域は、" + int9 + "。"
+          }
+	  if(int8 !== ""){
+            intArea += "震度6強を観測した地域は、" + int8 + "。"
+          }
+	  if(int7 !== ""){
+            intArea += "震度6弱を観測した地域は、" + int7 + "。"
+          }
+	  if(int6 !== ""){
+            intArea += "震度5強を観測した地域は、" + int6 + "。"
+          }
+	  if(int5 !== ""){
+            intArea += "震度75弱を観測した地域は、" + int5 + "。"
+          }
+	  if(int4 !== ""){
+            intArea += "震度4を観測した地域は、" + int4 + "。"
+          }
+	  if(int3 !== ""){
+            intArea += "震度3を観測した地域は、" + int3 + "。"
+          }
+	  if(int2 !== ""){
+            intArea += "震度2を観測した地域は、" + int2 + "。"
+          }
+	  if(int1 !== ""){
+            intArea += "震度1を観測した地域は、" + int1 + "。"
           }
           if(maxi === "1"){
             maxiArea = int1
@@ -196,23 +204,31 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           let intArea = ""
           let maxiArea
           if(int9 !== ""){
-            intArea += "震度7を観測した地域は、" + int9
-          }else if(int8 !== ""){
-            intArea += "震度6強を観測した地域は、" + int8
-          }else if(int7 !== ""){
-            intArea += "震度6弱を観測した地域は、" + int7
-          }else if(int6 !== ""){
-            intArea += "震度5強を観測した地域は、" + int6
-          }else if(int5 !== ""){
-            intArea += "震度75弱を観測した地域は、" + int5
-          }else if(int4 !== ""){
-            intArea += "震度4を観測した地域は、" + int4
-          }else if(int3 !== ""){
-            intArea += "震度3を観測した地域は、" + int3
-          }else if(int2 !== ""){
-            intArea += "震度2を観測した地域は、" + int2
-          }else if(int1 !== ""){
-            intArea += "震度1を観測した地域は、" + int1
+            intArea += "震度7を観測した地域は、" + int9 + "。"
+          }
+	  if(int8 !== ""){
+            intArea += "震度6強を観測した地域は、" + int8 + "。"
+          }
+	  if(int7 !== ""){
+            intArea += "震度6弱を観測した地域は、" + int7 + "。"
+          }
+	  if(int6 !== ""){
+            intArea += "震度5強を観測した地域は、" + int6 + "。"
+          }
+	  if(int5 !== ""){
+            intArea += "震度75弱を観測した地域は、" + int5 + "。"
+          }
+	  if(int4 !== ""){
+            intArea += "震度4を観測した地域は、" + int4 + "。"
+          }
+	  if(int3 !== ""){
+            intArea += "震度3を観測した地域は、" + int3 + "。"
+          }
+	  if(int2 !== ""){
+            intArea += "震度2を観測した地域は、" + int2 + "。"
+          }
+	  if(int1 !== ""){
+            intArea += "震度1を観測した地域は、" + int1 + "。"
           }
           if(maxi === "1"){
             maxiArea = int1
@@ -243,23 +259,31 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           let intArea = ""
           let maxiArea
           if(int9 !== ""){
-            intArea += "震度7を観測した地域は、" + int9
-          }else if(int8 !== ""){
-            intArea += "震度6強を観測した地域は、" + int8
-          }else if(int7 !== ""){
-            intArea += "震度6弱を観測した地域は、" + int7
-          }else if(int6 !== ""){
-            intArea += "震度5強を観測した地域は、" + int6
-          }else if(int5 !== ""){
-            intArea += "震度75弱を観測した地域は、" + int5
-          }else if(int4 !== ""){
-            intArea += "震度4を観測した地域は、" + int4
-          }else if(int3 !== ""){
-            intArea += "震度3を観測した地域は、" + int3
-          }else if(int2 !== ""){
-            intArea += "震度2を観測した地域は、" + int2
-          }else if(int1 !== ""){
-            intArea += "震度1を観測した地域は、" + int1
+            intArea += "震度7を観測した地域は、" + int9 + "。"
+          }
+	  if(int8 !== ""){
+            intArea += "震度6強を観測した地域は、" + int8 + "。"
+          }
+	  if(int7 !== ""){
+            intArea += "震度6弱を観測した地域は、" + int7 + "。"
+          }
+	  if(int6 !== ""){
+            intArea += "震度5強を観測した地域は、" + int6 + "。"
+          }
+	  if(int5 !== ""){
+            intArea += "震度75弱を観測した地域は、" + int5 + "。"
+          }
+	  if(int4 !== ""){
+            intArea += "震度4を観測した地域は、" + int4 + "。"
+          }
+	  if(int3 !== ""){
+            intArea += "震度3を観測した地域は、" + int3 + "。"
+          }
+	  if(int2 !== ""){
+            intArea += "震度2を観測した地域は、" + int2 + "。"
+          }
+	  if(int1 !== ""){
+            intArea += "震度1を観測した地域は、" + int1 + "。"
           }
           if(maxi === "1"){
             maxiArea = int1
