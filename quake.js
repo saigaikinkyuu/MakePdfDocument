@@ -184,7 +184,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           document.getElementById("title" + s).innerHTML = control.Title
           document.getElementById("date" + s).innerHTML = dateRP + "発行"
           if(hypo !== "調査中" && maxi !== "調査中"){
-            document.getElementById("body" + s).innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、最大震度" + maxi + "の地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。" + coment2 + "各地の震度です。" + intArea
+            document.getElementById("body" + s).innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、最大震度" + maxi + "の地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。地震の規模を示すマグニチュードは、" + mg + "、震源の深さは、" + depth + "です。" + coment2 + "各地の震度です。" + intArea
           }else if(hypo !== "調査中"){
             document.getElementById("body" + s).innerHTML = dateQuake + "ころ、最大震度" + maxi + "の地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。" + coment2 + "各地の震度です。" + intArea
           }else if(maxi !== "調査中"){
@@ -193,7 +193,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
             document.getElementById("body" + s).innerHTML = "入電情報がありません。"
           }
         }else if(head.Title === "震度速報"){
-          let intArea
+          let intArea = ""
           let maxiArea
           if(int9 !== ""){
             intArea += "震度7を観測した地域は、" + int9
@@ -233,11 +233,14 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           }else if(maxi === "7"){
             maxiArea = int9
           }
+	  if(head.TargetDateTime){
+            dateQuake = date(head.TargetDateTime)
+	  }
           document.getElementById("title" + s).innerHTML = control.Title
           document.getElementById("date" + s).innerHTML = dateRP + "発行"
           document.getElementById("body" + s).innerHTML = dateQuake + "ころ、最大震度" + maxi + "を観測する地震がありました。最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。マグニチュード・震源の深さは現在調査中です。" + coment2 + "各地の震度です。" + intArea
         }else if(head.Title === "震源速報"){
-          let intArea
+          let intArea = ""
           let maxiArea
           if(int9 !== ""){
             intArea += "震度7を観測した地域は、" + int9
