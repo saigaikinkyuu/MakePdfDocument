@@ -16,15 +16,15 @@ function searchQuake(){
           for(var s = 0;s<data.length;s++){
             let kindN
             if(data[s].ttl == "震度速報"){
-              kindN = 01
+              kindN = "01"
             }else if(data[s].ttl == "震源に関する情報"){
-              kindN = 02
+              kindN = "02"
             }else if(data[s].ttl == "震源・震度情報"){
-              kindN = 03
+              kindN = "03"
             }else if(data[s].ttl == "遠地地震に関する情報"){
-              kindN = 04
+              kindN = "04"
             }else {
-              kindN = 05
+              kindN = "05"
             }
             if(Number(date(data[s].at) + kindN) === Number(field1)){
               document.getElementById("content0").style.display = "block"
@@ -36,6 +36,18 @@ function searchQuake(){
         }
         if(field2 !== ""){
           for(var s = 0;s<data.length;s++){
+            let kindN
+            if(data[s].ttl == "震度速報"){
+              kindN = "01"
+            }else if(data[s].ttl == "震源に関する情報"){
+              kindN = "02"
+            }else if(data[s].ttl == "震源・震度情報"){
+              kindN = "03"
+            }else if(data[s].ttl == "遠地地震に関する情報"){
+              kindN = "04"
+            }else {
+              kindN = "05"
+            }
             if(Number(date(data[s].at) + kindN) === Number(field2)){
               document.getElementById("content1").style.display = "block"
               let dataN = s
@@ -46,6 +58,18 @@ function searchQuake(){
         }
         if(field3 !== ""){
           for(var s = 0;s<data.length;s++){
+            let kindN
+            if(data[s].ttl == "震度速報"){
+              kindN = "01"
+            }else if(data[s].ttl == "震源に関する情報"){
+              kindN = "02"
+            }else if(data[s].ttl == "震源・震度情報"){
+              kindN = "03"
+            }else if(data[s].ttl == "遠地地震に関する情報"){
+              kindN = "04"
+            }else {
+              kindN = "05"
+            }
             if(Number(date(data[s].at) + kindN) === Number(field3)){
               document.getElementById("content2").style.display = "block"
               let dataN = s
@@ -56,6 +80,18 @@ function searchQuake(){
         }
         if(field4 !== ""){
           for(var s = 0;s<data.length;s++){
+            let kindN
+            if(data[s].ttl == "震度速報"){
+              kindN = "01"
+            }else if(data[s].ttl == "震源に関する情報"){
+              kindN = "02"
+            }else if(data[s].ttl == "震源・震度情報"){
+              kindN = "03"
+            }else if(data[s].ttl == "遠地地震に関する情報"){
+              kindN = "04"
+            }else {
+              kindN = "05"
+            }
             if(Number(date(data[s].at) + kindN) === Number(field4)){
               document.getElementById("content3").style.display = "block"
               let dataN = s
