@@ -14,16 +14,16 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
     let dataContent = ""
     let kindN = ""
     for(var b = 0;b<data.length;b++){
-      if(data[s].ttl == "震度速報"){
-	kindN = 01
-      }else if(data[s].ttl == "震源に関する情報"){
-	kindN = 02
-      }else if(data[s].ttl == "震源・震度情報"){
-	kindN = 03
-      }else if(data[s].ttl == "遠地地震に関する情報"){
-	kindN = 04
+      if(data[b].ttl == "震度速報"){
+	kindN = "01"
+      }else if(data[b].ttl == "震源に関する情報"){
+	kindN = "02"
+      }else if(data[b].ttl == "震源・震度情報"){
+	kindN = "03"
+      }else if(data[b].ttl == "遠地地震に関する情報"){
+	kindN = "04"
       }else {
-	kindN = 05
+	kindN = "05"
       }
       document.getElementById('serect').innerHTML = ""
       dataContent += "<option value='" + (data[b].eid).substring(0, 11) + kindN + "'>" + "[" + data[b].ttl + "]" + date(data[b].at) + "(" + data[b].anm + ")"
