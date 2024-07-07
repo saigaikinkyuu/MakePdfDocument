@@ -26,6 +26,7 @@ function searchQuake(){
             }else {
               kindN = "05"
             }
+            console.log(Number(date(data[s].ctt) + kindN) + "," + Number(field1))
             if(Number(date(data[s].ctt) + kindN) === Number(field1)){
               document.getElementById("content0").style.display = "block"
               let dataN = s
