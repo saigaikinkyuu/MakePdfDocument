@@ -109,23 +109,23 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
                   let cities = prefs[i].Area
                   for(var c = 0;c<cities.length;c++){
                     if(cities[c].MaxInt === "1"){
-                      int1 += cities[c].Name + " "
+                      int1 += cities[c].Name + ","
                     }else if(cities[c].MaxInt === "2"){
-                      int2 += cities[c].Name + " "
+                      int2 += cities[c].Name + ","
                     }else if(cities[c].MaxInt === "3"){
-                      int3 += cities[c].Name + " "
+                      int3 += cities[c].Name + ","
                     }else if(cities[c].MaxInt === "4"){
-                      int4 += cities[c].Name + " "
+                      int4 += cities[c].Name + ","
                     }else if(cities[c].MaxInt === "5-"){
-                      int5 += cities[c].Name + " "
+                      int5 += cities[c].Name + ","
                     }else if(cities[c].MaxInt === "5+"){
-                      int6 += cities[c].Name + " "
+                      int6 += cities[c].Name + ","
                     }else if(cities[c].MaxInt === "6-"){
-                      int7 += cities[c].Name + " "
+                      int7 += cities[c].Name + ","
                     }else if(cities[c].MaxInt === "6+"){
-                      int8 += cities[c].Name + " "
+                      int8 += cities[c].Name + ","
                     }else if(cities[c].MaxInt === "7"){
-                      int9 += cities[c].Name + " "
+                      int9 += cities[c].Name + ","
                     }
                   }
                 }
@@ -144,50 +144,50 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           let intArea = ""
           let maxiArea
           if(int9 !== ""){
-            intArea += "震度7を観測した地域は、" + int9 + "。"
+            intArea += "震度7を観測した地域は、" + int9.substring(0, ((int9.length)-1)) + "。"
           }
 	  if(int8 !== ""){
-            intArea += "震度6強を観測した地域は、" + int8 + "。"
+            intArea += "震度6強を観測した地域は、" + int8.substring(0, ((int8.length)-1)) + "。"
           }
 	  if(int7 !== ""){
-            intArea += "震度6弱を観測した地域は、" + int7 + "。"
+            intArea += "震度6弱を観測した地域は、" + int7.substring(0, ((int7.length)-1)) + "。"
           }
 	  if(int6 !== ""){
-            intArea += "震度5強を観測した地域は、" + int6 + "。"
+            intArea += "震度5強を観測した地域は、" + int6.substring(0, ((int6.length)-1)) + "。"
           }
 	  if(int5 !== ""){
-            intArea += "震度75弱を観測した地域は、" + int5 + "。"
+            intArea += "震度75弱を観測した地域は、" + int5.substring(0, ((int5.length)-1)) + "。"
           }
 	  if(int4 !== ""){
-            intArea += "震度4を観測した地域は、" + int4 + "。"
+            intArea += "震度4を観測した地域は、" + int4.substring(0, ((int4.length)-1)) + "。"
           }
 	  if(int3 !== ""){
-            intArea += "震度3を観測した地域は、" + int3 + "。"
+            intArea += "震度3を観測した地域は、" + int3.substring(0, ((int3.length)-1)) + "。"
           }
 	  if(int2 !== ""){
-            intArea += "震度2を観測した地域は、" + int2 + "。"
+            intArea += "震度2を観測した地域は、" + int2.substring(0, ((int2.length)-1)) + "。"
           }
 	  if(int1 !== ""){
-            intArea += "震度1を観測した地域は、" + int1 + "。"
+            intArea += "震度1を観測した地域は、" + int1.substring(0, ((int1.length)-1)) + "。"
           }
           if(maxi === "1"){
-            maxiArea = int1
+            maxiArea = int1.substring(0, ((int1.length)-1))
           }else if(maxi === "2"){
-            maxiArea = int2
+            maxiArea = int2.substring(0, ((int2.length)-1))
           }else if(maxi === "3"){
-            maxiArea = int3
+            maxiArea = int3.substring(0, ((int3.length)-1))
           }else if(maxi === "4"){
-            maxiArea = int4
+            maxiArea = int4.substring(0, ((int4.length)-1))
           }else if(maxi === "5弱"){
-            maxiArea = int5
+            maxiArea = int5.substring(0, ((int5.length)-1))
           }else if(maxi === "5強"){
-            maxiArea = int6
+            maxiArea = int6.substring(0, ((int6.length)-1))
           }else if(maxi === "6弱"){
-            maxiArea = int7
+            maxiArea = int7.substring(0, ((int7.length)-1))
           }else if(maxi === "6強"){
-            maxiArea = int8
+            maxiArea = int8.substring(0, ((int8.length)-1))
           }else if(maxi === "7"){
-            maxiArea = int9
+            maxiArea = int9.substring(0, ((int9.length)-1))
           }
           document.getElementById("title" + s).innerHTML = control.Title
           document.getElementById("date" + s).innerHTML = dateRP + "発行"
@@ -204,50 +204,50 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           let intArea = ""
           let maxiArea
           if(int9 !== ""){
-            intArea += "震度7を観測した地域は、" + int9 + "。"
+            intArea += "震度7を観測した地域は、" + int9.substring(0, ((int9.length)-1)) + "。"
           }
 	  if(int8 !== ""){
-            intArea += "震度6強を観測した地域は、" + int8 + "。"
+            intArea += "震度6強を観測した地域は、" + int8.substring(0, ((int8.length)-1)) + "。"
           }
 	  if(int7 !== ""){
-            intArea += "震度6弱を観測した地域は、" + int7 + "。"
+            intArea += "震度6弱を観測した地域は、" + int7.substring(0, ((int7.length)-1)) + "。"
           }
 	  if(int6 !== ""){
-            intArea += "震度5強を観測した地域は、" + int6 + "。"
+            intArea += "震度5強を観測した地域は、" + int6.substring(0, ((int6.length)-1)) + "。"
           }
 	  if(int5 !== ""){
-            intArea += "震度75弱を観測した地域は、" + int5 + "。"
+            intArea += "震度75弱を観測した地域は、" + int5.substring(0, ((int5.length)-1)) + "。"
           }
 	  if(int4 !== ""){
-            intArea += "震度4を観測した地域は、" + int4 + "。"
+            intArea += "震度4を観測した地域は、" + int4.substring(0, ((int4.length)-1)) + "。"
           }
 	  if(int3 !== ""){
-            intArea += "震度3を観測した地域は、" + int3 + "。"
+            intArea += "震度3を観測した地域は、" + int3.substring(0, ((int3.length)-1)) + "。"
           }
 	  if(int2 !== ""){
-            intArea += "震度2を観測した地域は、" + int2 + "。"
+            intArea += "震度2を観測した地域は、" + int2.substring(0, ((int2.length)-1)) + "。"
           }
 	  if(int1 !== ""){
-            intArea += "震度1を観測した地域は、" + int1 + "。"
+            intArea += "震度1を観測した地域は、" + int1.substring(0, ((int1.length)-1)) + "。"
           }
           if(maxi === "1"){
-            maxiArea = int1
+            maxiArea = int1.substring(0, ((int1.length)-1))
           }else if(maxi === "2"){
-            maxiArea = int2
+            maxiArea = int2.substring(0, ((int2.length)-1))
           }else if(maxi === "3"){
-            maxiArea = int3
+            maxiArea = int3.substring(0, ((int3.length)-1))
           }else if(maxi === "4"){
-            maxiArea = int4
+            maxiArea = int4.substring(0, ((int4.length)-1))
           }else if(maxi === "5弱"){
-            maxiArea = int5
+            maxiArea = int5.substring(0, ((int5.length)-1))
           }else if(maxi === "5強"){
-            maxiArea = int6
+            maxiArea = int6.substring(0, ((int6.length)-1))
           }else if(maxi === "6弱"){
-            maxiArea = int7
+            maxiArea = int7.substring(0, ((int7.length)-1))
           }else if(maxi === "6強"){
-            maxiArea = int8
+            maxiArea = int8.substring(0, ((int8.length)-1))
           }else if(maxi === "7"){
-            maxiArea = int9
+            maxiArea = int9.substring(0, ((int9.length)-1))
           }
 	  if(head.TargetDateTime){
             dateQuake = date(head.TargetDateTime)
@@ -259,50 +259,50 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           let intArea = ""
           let maxiArea
           if(int9 !== ""){
-            intArea += "震度7を観測した地域は、" + int9 + "。"
+            intArea += "震度7を観測した地域は、" + int9.substring(0, ((int9.length)-1)) + "。"
           }
 	  if(int8 !== ""){
-            intArea += "震度6強を観測した地域は、" + int8 + "。"
+            intArea += "震度6強を観測した地域は、" + int8.substring(0, ((int8.length)-1)) + "。"
           }
 	  if(int7 !== ""){
-            intArea += "震度6弱を観測した地域は、" + int7 + "。"
+            intArea += "震度6弱を観測した地域は、" + int7.substring(0, ((int7.length)-1)) + "。"
           }
 	  if(int6 !== ""){
-            intArea += "震度5強を観測した地域は、" + int6 + "。"
+            intArea += "震度5強を観測した地域は、" + int6.substring(0, ((int6.length)-1)) + "。"
           }
 	  if(int5 !== ""){
-            intArea += "震度75弱を観測した地域は、" + int5 + "。"
+            intArea += "震度75弱を観測した地域は、" + int5.substring(0, ((int5.length)-1)) + "。"
           }
 	  if(int4 !== ""){
-            intArea += "震度4を観測した地域は、" + int4 + "。"
+            intArea += "震度4を観測した地域は、" + int4.substring(0, ((int4.length)-1)) + "。"
           }
 	  if(int3 !== ""){
-            intArea += "震度3を観測した地域は、" + int3 + "。"
+            intArea += "震度3を観測した地域は、" + int3.substring(0, ((int3.length)-1)) + "。"
           }
 	  if(int2 !== ""){
-            intArea += "震度2を観測した地域は、" + int2 + "。"
+            intArea += "震度2を観測した地域は、" + int2.substring(0, ((int2.length)-1)) + "。"
           }
 	  if(int1 !== ""){
-            intArea += "震度1を観測した地域は、" + int1 + "。"
+            intArea += "震度1を観測した地域は、" + int1.substring(0, ((int1.length)-1)) + "。"
           }
           if(maxi === "1"){
-            maxiArea = int1
+            maxiArea = int1.substring(0, ((int1.length)-1))
           }else if(maxi === "2"){
-            maxiArea = int2
+            maxiArea = int2.substring(0, ((int2.length)-1))
           }else if(maxi === "3"){
-            maxiArea = int3
+            maxiArea = int3.substring(0, ((int3.length)-1))
           }else if(maxi === "4"){
-            maxiArea = int4
+            maxiArea = int4.substring(0, ((int4.length)-1))
           }else if(maxi === "5弱"){
-            maxiArea = int5
+            maxiArea = int5.substring(0, ((int5.length)-1))
           }else if(maxi === "5強"){
-            maxiArea = int6
+            maxiArea = int6.substring(0, ((int6.length)-1))
           }else if(maxi === "6弱"){
-            maxiArea = int7
+            maxiArea = int7.substring(0, ((int7.length)-1))
           }else if(maxi === "6強"){
-            maxiArea = int8
+            maxiArea = int8.substring(0, ((int8.length)-1))
           }else if(maxi === "7"){
-            maxiArea = int9
+            maxiArea = int9.substring(0, ((int9.length)-1))
           }
           document.getElementById("title" + s).innerHTML = control.Title
           document.getElementById("date" + s).innerHTML = dateRP + "発行"
