@@ -12,12 +12,21 @@ function searchQuake(){
   let field3 = document.getElementById("field3").value
   let field4 = document.getElementById("field4").value
     $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
-        console.log(field1)
         if(field1 !== ""){
-          console.log(data)
           for(var s = 0;s<data.length;s++){
-            console.log(Number(date(data[s].at)))
-            if(Number(date(data[s].at)) === Number(field1)){
+            let kindN
+            if(data[s].ttl == "震度速報"){
+              kindN = 01
+            }else if(data[s].ttl == "震源に関する情報"){
+              kindN = 02
+            }else if(data[s].ttl == "震源・震度情報"){
+              kindN = 03
+            }else if(data[s].ttl == "遠地地震に関する情報"){
+              kindN = 04
+            }else {
+              kindN = 05
+            }
+            if(Number(date(data[s].at) + kindN) === Number(field1)){
               document.getElementById("content0").style.display = "block"
               let dataN = s
               s = data.length
@@ -27,7 +36,7 @@ function searchQuake(){
         }
         if(field2 !== ""){
           for(var s = 0;s<data.length;s++){
-            if(Number(date(data[s].at)) === Number(field2)){
+            if(Number(date(data[s].at) + kindN) === Number(field2)){
               document.getElementById("content1").style.display = "block"
               let dataN = s
               s = data.length
@@ -37,7 +46,7 @@ function searchQuake(){
         }
         if(field3 !== ""){
           for(var s = 0;s<data.length;s++){
-            if(Number(date(data[s].at)) === Number(field3)){
+            if(Number(date(data[s].at) + kindN) === Number(field3)){
               document.getElementById("content2").style.display = "block"
               let dataN = s
               s = data.length
@@ -47,7 +56,7 @@ function searchQuake(){
         }
         if(field4 !== ""){
           for(var s = 0;s<data.length;s++){
-            if(Number(date(data[s].at)) === Number(field4)){
+            if(Number(date(data[s].at) + kindN) === Number(field4)){
               document.getElementById("content3").style.display = "block"
               let dataN = s
               s = data.length
