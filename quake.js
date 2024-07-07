@@ -26,7 +26,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
 	kindN = "05"
       }
       document.getElementById('serect').innerHTML = ""
-      dataContent += "<option value='" + (data[b].eid).substring(0, 12) + kindN + "'>" + "[" + data[b].ttl + "]" + date(data[b].at) + "(" + data[b].anm + ")"
+      dataContent += "<option value='" + (data[b].ctt).substring(0, 12) + kindN + "'>" + "[" + data[b].ttl + "]" + date(data[b].at) + "(" + data[b].anm + ")"
     }
     document.getElementById('serect').innerHTML = dataContent
     if(areaData.Control && areaData.Head && areaData.Body){
