@@ -104,9 +104,9 @@ function searchQuake(){
               s = data.length
               settingField(dataN,3)
             }
-          }else {
+          }
+        }else {
           document.getElementById('content3').style.display = "none"
-        }
         }
     })
 }
