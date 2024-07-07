@@ -1,6 +1,6 @@
 function date(time){
   let year = new Date(time).getFullYear()
-  let month = ("0" + new Date(time).getMonth()).slice(-2)
+  let month = ("0" + (new Date(time).getMonth()+1)).slice(-2)
   let date = ("0" + new Date(time).getDate()).slice(-2)
   let hour = ("0" + new Date(time).getHours()).slice(-2)
   let minute = ("0" + new Date(time).getMinutes()).slice(-2)
