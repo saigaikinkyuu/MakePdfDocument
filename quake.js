@@ -3,7 +3,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
   $.getJSON("https://www.jma.go.jp/bosai/quake/data/" + data[n].json, function (areaData) { 
 	function date(time){
 	  const year = new Date(time).getFullYear()
-	  const month = ("0" + new Date(time).getMonth()).slice(-2)
+	  const month = ("0" + (new Date(time).getMonth()+1)).slice(-2)
 	  const date = ("0" + new Date(time).getDate()).slice(-2)
 	  const hour = ("0" + new Date(time).getHours()).slice(-2)
 	  const minute = ("0" + new Date(time).getMinutes()).slice(-2)
