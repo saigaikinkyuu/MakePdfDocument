@@ -259,7 +259,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           let maxiArea
           document.getElementById("title" + s).innerHTML = control.Title
           document.getElementById("date" + s).innerHTML = dateRP + "発行"
-          document.getElementById("body" + s).innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、地震がありました。<br>地震の規模を示すマグニチュードは、" + mg + "震源の深さは、" + depth + "です。<br>" + coment2
+          document.getElementById("body" + s).innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、地震がありました。<br>地震の規模を示すマグニチュードは、" + mg + "、震源の深さは、" + depth + "です。<br>" + coment2
           }else if(head.Title === "遠地地震に関する情報"){
           document.getElementById("title" + s).innerHTML = head.Title
           document.getElementById("date" + s).innerHTML = dateRP + "発行"
