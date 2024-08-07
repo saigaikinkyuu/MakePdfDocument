@@ -99,9 +99,9 @@ function dataGet(xmlDoc){
 	    headStatus = headItem
 	    let infoHead = ""
             if(headStatus.includes("発表") === true){
-              infoHead = "土砂災害警戒情報は【警戒レバル4相当】の情報です。危険な地域から直ちに避難する必要があります。市区町村からの避難指示に注意してください。\n"
+              infoHead = "土砂災害警戒情報は【警戒レベル4相当】の情報です。危険な地域から直ちに避難する必要があります。市区町村からの避難指示に注意してください。\n対象地域です。\n"
 	    }else {
-	      infoHead = ""
+	      infoHead = "解除された地域です。\n"
 	    }
 	    body += xmlDoc.Body.TargetArea.Name + "内の地域に土砂災害警戒情報が" + headStatus + "されました。\n" + infoHead
 	  }else if(title.includes("気象警報・注意報") === true){
@@ -188,8 +188,10 @@ function dataGet(xmlDoc){
 	  }
 	}else if(title.includes("気象情報") === true || title.includes("記録的短時間大雨情報") === true || title.includes("竜巻注意情報") === true){
 	  body = xmlDoc.Head.Headline.Text
-	}else if(title.includes("発達する熱帯低気圧に関する情報") === true){
+	}else if(title.includes("発達する熱帯低気圧に関する情報") === true || title.includes("熱中症警戒アラート") === true){
 	  body = xmlDoc.Body.Comment.Text
+	}else if(title.includes("氾濫警戒情報") === true){
+	  body = xmlDoc.Body.Warning.Item[0].Kind.Property.Text
 	}else {
 	  title += "[未対応情報]"
 	  body = "リクエストされた情報は、対応していない情報です。"
