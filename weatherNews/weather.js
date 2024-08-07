@@ -76,6 +76,7 @@ function dataGet(url){
 	date = dateTime(xmlDoc.Head.ReportDateTime) + "発表"
 	var area = ""
 	var kind = ""
+	console.log(title.includes("気象情報"))
 	if(title.includes("気象情報") !== true){
 	  var warnings = xmlDoc.Body.Warning
   	  var items = warnings[0].Item
