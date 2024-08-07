@@ -15,7 +15,7 @@ function setSerect(){
         for (let i = 0; i < entries.length; i++) {
           if(entries[i].title && entries[i].updated && entries[i].id && entries[i].author.name && entries[i].content){
             document.getElementById('serect').innerHTML = ""
-            dataContent += "<option value='" + entries[i].id + "'>" + "[" + entries[i].title + "]" + date(entries[i].updated) + "(" + entries[i].author.name + ")"
+            dataContent += "<option value='" + entries[i].id + "'>" + "[" + entries[i].title + "]" + dateTime(entries[i].updated) + "(" + entries[i].author.name + ")"
 	    console.log(dataContent)
             idArray.push(entries[i].id)
           }
