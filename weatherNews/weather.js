@@ -33,9 +33,9 @@ function content(){
       $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
 	let info = dataGet(xmlDoc)
 	console.log(info)
-	document.getElementById("title0").innerHTML = info[0]
-	document.getElementById("date0").innerHTML = info[1]
-	document.getElementById("body0").innerHTML = info[2]
+	document.getElementById("title0").innerText = info[0]
+	document.getElementById("date0").innerText = info[1]
+	document.getElementById("body0").innerText = info[2]
 	document.getElementById("content0").style.display = "block"
       })
     }else if(field1 === ""){
@@ -44,9 +44,9 @@ function content(){
     if(field2 !== "" && idArray.includes(field2) === true){
       $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
 	let info = dataGet(xmlDoc)
-	document.getElementById("title1").innerHTML = info[0]
-	document.getElementById("date1").innerHTML = info[1]
-	document.getElementById("body1").innerHTML = info[2]
+	document.getElementById("title1").innerText = info[0]
+	document.getElementById("date1").innerText = info[1]
+	document.getElementById("body1").innerText = info[2]
 	document.getElementById("content1").style.display = "block"
       })
     }else if(field2 === ""){
@@ -55,9 +55,9 @@ function content(){
     if(field3 !== "" && idArray.includes(field3) === true){
       $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
 	let info = dataGet(xmlDoc)
-	document.getElementById("title2").innerHTML = info[0]
-	document.getElementById("date2").innerHTML = info[1]
-	document.getElementById("body2").innerHTML = info[2]
+	document.getElementById("title2").innerText = info[0]
+	document.getElementById("date2").innerText = info[1]
+	document.getElementById("body2").innerText = info[2]
 	document.getElementById("content2").style.display = "block"
       })
     }else if(field3 === ""){
@@ -66,9 +66,9 @@ function content(){
     if(field4 !== "" && idArray.includes(field4) === true){
       $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
 	let info = dataGet(xmlDoc)
-	document.getElementById("title3").innerHTML = info[0]
-	document.getElementById("date3").innerHTML = info[1]
-	document.getElementById("body3").innerHTML = info[2]
+	document.getElementById("title3").innerText = info[0]
+	document.getElementById("date3").innerText = info[1]
+	document.getElementById("body3").innerText = info[2]
 	document.getElementById("content3").style.display = "block"
       })
     }else if(field4 === ""){
@@ -96,15 +96,12 @@ function dataGet(xmlDoc){
 	  }
 	  if(title.includes("土砂災害警戒情報") === true){
             let headItem = xmlDoc.Head.Headline.Information.Item.Kind.Condition
-	    console.log(xmlDoc.Head.Headline.Information.Item)
-	    console.log(xmlDoc.Head.Headline.Information.Item.Kind)
-	    console.log(xmlDoc.Head.Headline.Information.Item.Kind.Condition)
 	    headStatus = headItem
 	    let infoHead = ""
             if(headStatus.includes("発表") === true){
               infoHead = "土砂災害警戒情報は【警戒レバル4相当】の情報です。危険な地域から直ちに避難する必要があります。市区町村からの避難指示に注意してください。\n"
 	    }else {
-	      infoHead = "土砂災害警戒情報は全解除されました。\n"
+	      infoHead = ""
 	    }
 	    body += xmlDoc.Body.TargetArea.Name + "内の地域に土砂災害警戒情報が" + headStatus + "されました。\n" + infoHead
 	  }else if(title.includes("気象警報・注意報") === true){
