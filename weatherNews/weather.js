@@ -9,10 +9,11 @@ function date(time){
   return normalDate
 }
 function setSerect(){
-  fetch("https://www.data.jma.go.jp/developer/xml/feed/extra.xml")
-    .then(response => response.text())
-    .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
-    .then(xmlDoc => {
+  $.ajax({
+      type: "GET",
+  　   url: "https://www.data.jma.go.jp/developer/xml/feed/extra.xml",
+      dataType: "xml",
+      success: function(xmlDoc) {
         const entries = xmlDoc.getElementsByTagName("entry");
         let dataContent = ""
         for (let i = 0; i < entries.length; i++) {
@@ -23,10 +24,11 @@ function setSerect(){
           }
         }
         document.getElementById('serect').innerHTML = dataContent
-    })
-    .catch(error => {
-        console.error("Failed to load XML file:", error);
-    });
+    },
+    error: function() {
+        console.error("Failed to load XML file.");
+    }
+  });
 }
 
 function content(){
