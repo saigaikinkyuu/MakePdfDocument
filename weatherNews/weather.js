@@ -20,11 +20,7 @@ function setSerect(){
           }
         }
         document.getElementById('serect').innerHTML = dataContent
-    }),
-    error: function() {
-        console.error("Failed to load XML file.");
-    }
-  });
+    })
 }
 
 function content(){
