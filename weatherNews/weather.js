@@ -120,21 +120,21 @@ function dataGet(xmlDoc){
 	          addition = ""
 		  if(kinds[i]){
 	          if(kinds[i].Addition){
-	            var additions = kinds[i].Addition
+	            var additions = kinds[i].Addition.Note
 		    if (!Array.isArray(additions)) {
 		      additions = [additions];
 		    }
 	            for(var b = 0;b<additions.length;b++){
-	              addition += additions[b].Note + ","
+	              addition += additions[b] + ","
 	            }
 	          }
 	          if(kinds[i].Attention){
-	            attentions = kinds[i].Attention
+	            attentions = kinds[i].Attention.Note
 		    if (!Array.isArray(attentions)) {
 		      attentions = [attentions];
 		    }
 	            for(var c = 0;b<attentions.length;c++){
-	              attention += attentions[c].Note  + ","
+	              attention += attentions[c]  + ","
 	            }
 	          }
 	          totalInfo = addition + attention.slice(0,attention.length-1)
