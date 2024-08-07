@@ -83,82 +83,86 @@ function dataGet(url){
 	date = date(xmlDoc.getElementsByTagName("Head").getElementsByTagName("ReportDateTime").textContent) + "発表"
 	var area = ""
 	var kind = ""
-	var warnings = xmlDoc.getElementsByTagName("Body").getElementsByTagName("Warning")
-	var items = warnings[0].getElementsByTagName("Item")
-	if(title.includes("土砂災害警戒情報") === true){
-          let headItem = xmlDoc.getElementsByTagName("Head").getElementsByTagName("Headline").getElementsByTagName("Information").getElementsByTagName("Item")
-	  headStatus = ""
-	  for(var e = 0;e<headItem.length;e++){
-	    headStatus += headItem[e].getElementsByTagName("Kind").getElementsByTagName("Name") + "・"
+	if(title.includes("気象情報") !== true){
+	  var warnings = xmlDoc.getElementsByTagName("Body").getElementsByTagName("Warning")
+  	  var items = warnings[0].getElementsByTagName("Item")
+	  if(title.includes("土砂災害警戒情報") === true){
+            let headItem = xmlDoc.getElementsByTagName("Head").getElementsByTagName("Headline").getElementsByTagName("Information").getElementsByTagName("Item")
+	    headStatus = ""
+	    for(var e = 0;e<headItem.length;e++){
+	      headStatus += headItem[e].getElementsByTagName("Kind").getElementsByTagName("Name") + "・"
+	    }
+	    headStatus = headStatus.slice(0,headStatus.lengh-1)
+	    let infoHead = ""
+            if(headStatus.includes("発表") === true){
+              infoHead = "土砂災害警戒情報は【警戒レバル4相当】の情報です。危険な地域から直ちに避難する必要があります。市区町村からの避難指示に注意してください。\n"
+	    }else {
+	      infoHead = "土砂災害警戒情報は全解除されました。\n"
+	    }
+	    body += xmlDoc.getElementsByTagName("Body").getElementsByTagName("TargetArea").getElementsByTagName("Name").textContent + "内の地域に土砂災害警戒情報が" + headStatus + "されました。\n" + infoHead
+	  }else if(title.includes("気象警報・注意報") === true){
+	    body = xmlDoc.getElementsByTagName("Head").getElementsByTagName("Headline").getElementsByTagName("Text").textContent + "\n詳細情報です。"
 	  }
-	  headStatus = headStatus.slice(0,headStatus.lengh-1)
-	  let infoHead = ""
-          if(headStatus.includes("発表") === true){
-            infoHead = "土砂災害警戒情報は【警戒レバル4相当】の情報です。危険な地域から直ちに避難する必要があります。市区町村からの避難指示に注意してください。\n"
-	  }else {
-	    infoHead = "土砂災害警戒情報は全解除されました。\n"
-	  }
-	  body += xmlDoc.getElementsByTagName("Body").getElementsByTagName("TargetArea").getElementsByTagName("Name").textContent + "内の地域に土砂災害警戒情報が" + headStatus + "されました。\n" + infoHead
-	}else if(title.includes("気象警報・注意報") === true){
-	  body = xmlDoc.getElementsByTagName("Head").getElementsByTagName("Headline").getElementsByTagName("Text").textContent + "\n詳細情報です。"
-	}
-	for(var d = 0;d<items.length;d++){
-	    var kinds = items[d].getElementsByTagName("Kind")
-	    var areas = items[d].getElementsByTagName("Area")
-	    if(title.includes("気象警報・注意報") === true){
-	      for(var i = 0;i<kinds.length;i++){
-	        var addition = ""
-	        if(kind[i].getElementsByTagName("Addition")){
-	          var additions = kind[i].getElementsByTagName("Addition")
-	          for(var b = 0;b<additions.length;b++){
-	            addition += additions[b].getElementsByTagName("Note").textContent + ","
+	  for(var d = 0;d<items.length;d++){
+	      var kinds = items[d].getElementsByTagName("Kind")
+	      var areas = items[d].getElementsByTagName("Area")
+	      if(title.includes("気象警報・注意報") === true){
+	        for(var i = 0;i<kinds.length;i++){
+	          var addition = ""
+	          if(kind[i].getElementsByTagName("Addition")){
+	            var additions = kind[i].getElementsByTagName("Addition")
+	            for(var b = 0;b<additions.length;b++){
+	              addition += additions[b].getElementsByTagName("Note").textContent + ","
+	            }
+	          }
+	            if(kind[i].getElementsByTagName("Attention")){
+	            var attentions = kind[i].getElementsByTagName("Attention")
+	            for(var c = 0;b<additions.length;c++){
+	              attention += attentions[c].getElementsByTagName("Note").textContent  + ","
+	            }
+	          }
+	          var totalInfo = addition + attention.slice(0,attention.length-1)
+	          if(totalInfo === ""){
+	            kind += kinds[i].getElementsByTagName("Name").textContent + "[" + kinds[i].getElementsByTagName("Status").textContent + "]，"
+	          }else {
+	            kind += kinds[i].getElementsByTagName("Name").textContent + "(" + totalInfo + ")" + "[" + kinds[i].getElementsByTagName("Status").textContent + "]，"
 	          }
 	        }
-	          if(kind[i].getElementsByTagName("Attention")){
-	          var attentions = kind[i].getElementsByTagName("Attention")
-	          for(var c = 0;b<additions.length;c++){
-	            attention += attentions[c].getElementsByTagName("Note").textContent  + ","
-	          }
+	        for(var a = 0;a<areas.length;a++){
+	          area += areas[a].getElementsByTagName("Name").textContent + "(" + items[d].getElementsByTagName("FullStatus") + "),"
 	        }
-	        var totalInfo = addition + attention.slice(0,attention.length-1)
-	        if(totalInfo === ""){
-	          kind += kinds[i].getElementsByTagName("Name").textContent + "[" + kinds[i].getElementsByTagName("Status").textContent + "]，"
-	        }else {
-	          kind += kinds[i].getElementsByTagName("Name").textContent + "(" + totalInfo + ")" + "[" + kinds[i].getElementsByTagName("Status").textContent + "]，"
-	        }
-	      }
-	      for(var a = 0;a<areas.length;a++){
-	        area += areas[a].getElementsByTagName("Name").textContent + "(" + items[d].getElementsByTagName("FullStatus") + "),"
-	      }
-	      area = area.slice(0,area.length-1)
-	      kind = kind.slice(0,kind.length-1)
-	      if(area !== "" && kind !== ""){
-	        let changeSf = ""
-	        let changeSfi = ""
-		 if(items[d].getElementsByTagName("ChangeStatus").textContent !== "変化無"){
-	           if(items[d].getElementsByTagName("EditingMark").textContent === "1"){
+	        area = area.slice(0,area.length-1)
+	        kind = kind.slice(0,kind.length-1)
+	        if(area !== "" && kind !== ""){
+	          let changeSf = ""
+	          let changeSfi = ""
+		   if(items[d].getElementsByTagName("ChangeStatus").textContent !== "変化無"){
+	             if(items[d].getElementsByTagName("EditingMark").textContent === "1"){
+		       changeSf = "に発表されている"
+		       changeSfi = "が解除されました。"
+		     }else if(items[d].getElementsByTagName("EditingMark").textContent === "0"){
+		       changeSf = "に"
+		       changeSfi = "が発表されました。"
+		     }
+		   }else if(items[d].getElementsByTagName("ChangeStatus").textContent === "変化無"){
 		     changeSf = "に発表されている"
-		     changeSfi = "が解除されました。"
-		   }else if(items[d].getElementsByTagName("EditingMark").textContent === "0"){
-		     changeSf = "に"
-		     changeSfi = "が発表されました。"
+		     changeSfi = "は現在も継続して発表されています。"
 		   }
-		 }else if(items[d].getElementsByTagName("ChangeStatus").textContent === "変化無"){
-		   changeSf = "に発表されている"
-		   changeSfi = "は現在も継続して発表されています。"
-		 }
-	         body += area + changeSf + kind + changeSfi + "\n"
-	     }
-            }else if(title.includes("土砂災害警戒情報") === true){
-	      if(kinds.getElementsByTagName("Name").textContent !== "なし"){
-	        area = xmlDoc.getElementsByTagName("Body").getElementsByTagName("TargetArea").getElementsByTagName("Name").textContent + areas.getElementsByTagName("Name")
-	        if(kinds.getElementsByTagName("Status") === "発表"){
-		  body += area + changeSf + kind + changeSfi + "\n"
-		}else if(kinds.getElementsByTagName("Status") === "解除"){
-		  body += area + changeSf + kind + changeSfi + "\n"
-		}
-	     }
-            }
+	           body += area + changeSf + kind + changeSfi + "\n"
+	       }
+              }else if(title.includes("土砂災害警戒情報") === true){
+	        if(kinds.getElementsByTagName("Name").textContent !== "なし"){
+	          area = xmlDoc.getElementsByTagName("Body").getElementsByTagName("TargetArea").getElementsByTagName("Name").textContent + areas.getElementsByTagName("Name")
+	          if(kinds.getElementsByTagName("Status") === "発表"){
+		    body += area + changeSf + kind + changeSfi + "\n"
+		  }else if(kinds.getElementsByTagName("Status") === "解除"){
+		    body += area + changeSf + kind + changeSfi + "\n"
+		  }
+	       }
+              }
+	  }
+	}else {
+	  body = xmlDoc.getElementsByTagName("Head").getElementsByTagName("Headline").getElementsByTagName("Text").textContent
 	}
 	return [title,date,body]
     })
