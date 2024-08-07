@@ -24,14 +24,14 @@ function setSerect(){
     })
 }
 
-async function content(){
+function content(){
     let field1 = document.getElementById("field1").value
     let field2 = document.getElementById("field2").value
     let field3 = document.getElementById("field3").value
     let field4 = document.getElementById("field4").value
     if(field1 !== "" && idArray.includes(field1) === true){
       $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
-	let info = await dataGet(xmlDoc)
+	let info = dataGet(xmlDoc)
 	console.log(info)
 	document.getElementById("title0").innerHTML = info[0]
 	document.getElementById("date0").innerHTML = info[1]
@@ -75,7 +75,7 @@ async function content(){
 	document.getElementById("content3").style.display = "none"
     }
 }
-async function dataGet(xmlDoc){
+function dataGet(xmlDoc){
 	var title = ""
 	var date = ""
 	var body = ""
