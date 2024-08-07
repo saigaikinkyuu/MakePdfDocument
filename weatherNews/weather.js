@@ -13,7 +13,7 @@ function setSerect(){
         const entries = xmlDoc.entry;
         let dataContent = ""
         for (let i = 0; i < entries.length; i++) {
-          if(entries[i].title && entries[i].updated && entries[i].id && entries[i].author.name && entries[i].link && entries[i].content){
+          if(entries[i].title && entries[i].updated && entries[i].id && entries[i].author.name && entries[i].content){
             document.getElementById('serect').innerHTML = ""
             dataContent += "<option value='" + entries[i].id + "'>" + "[" + entries[i].title + "]" + date(entries[i].updated) + "(" + entries[i].author.name + ")"
 	    console.log(dataContent)
