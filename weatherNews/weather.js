@@ -146,13 +146,11 @@ function dataGet(xmlDoc){
 		  }else {
 		    totalInfo = ""
 		  }
-		  console.log(totalInfo)
 	          if(totalInfo === ""){
 	            kind += kinds[i].Name + "[" + kinds[i].Status + "]，"
 	          }else {
 	            kind += kinds[i].Name + "(" + totalInfo + ")" + "[" + kinds[i].Status + "]，"
 	          }
-		  console.log(kind)
 		}
 		}
 	        for(var a = 0;a<areas.length;a++){
@@ -160,6 +158,7 @@ function dataGet(xmlDoc){
 	        }
 	        area = area.slice(0,area.length-1)
 	        kind = kind.slice(0,kind.length-1)
+		console.log(kind)
 	        if(area !== "" && kind !== ""){
 	          let changeSf = ""
 	          let changeSfi = ""
