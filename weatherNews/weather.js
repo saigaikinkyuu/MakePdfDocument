@@ -95,12 +95,8 @@ function dataGet(xmlDoc){
 	    items = [items];
 	  }
 	  if(title.includes("土砂災害警戒情報") === true){
-            let headItem = xmlDoc.Head.Headline.Information.Item
-	    headStatus = ""
-	    for(var e = 0;e<headItem.length;e++){
-	      headStatus += headItem[e].Kind.Name + "・"
-	    }
-	    headStatus = headStatus.slice(0,headStatus.lengh-1)
+            let headItem = xmlDoc.Head.Headline.Information.Item.Kind.Name
+	    headStatus = headItem
 	    let infoHead = ""
             if(headStatus.includes("発表") === true){
               infoHead = "土砂災害警戒情報は【警戒レバル4相当】の情報です。危険な地域から直ちに避難する必要があります。市区町村からの避難指示に注意してください。\n"
