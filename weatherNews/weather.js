@@ -31,6 +31,7 @@ function content(){
     let field4 = document.getElementById("field4").value
     if(field1 !== "" && idArray.includes(field1) === true){
 	let info = dataGet(field1)
+	console.log(info)
 	document.getElementById("title0").innerHTML = info[0]
 	document.getElementById("date0").innerHTML = info[1]
 	document.getElementById("body0").innerHTML = info[2]
