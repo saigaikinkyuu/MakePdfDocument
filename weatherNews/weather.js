@@ -84,7 +84,7 @@ function dataGet(xmlDoc){
 	var area = ""
 	var kind = ""
 	console.log(title.includes("気象情報"))
-	if(title.includes("気象情報") !== true){
+	if(title.includes("気象情報") !== true || title.includes("記録的短時間大雨情報") !== true){
 	  var warnings = xmlDoc.Body.Warning
 	  if (!Array.isArray(warnings)) {
 	    warnings = [warnings];
@@ -186,8 +186,13 @@ function dataGet(xmlDoc){
 	       }
               }
 	  }
-	}else {
+	}else if(title.includes("気象情報") === true || title.includes("記録的短時間大雨情報") === true || title.includes("竜巻注意情報") === true){
 	  body = xmlDoc.Head.Headline.Text
+	}else if(title.includes("発達する熱帯低気圧に関する情報") === true){
+	  body = xmlDoc.Body.Comment.Text
+	}else {
+	  title += "[未対応情報]"
+	  body = "リクエストされた情報は、対応していない情報です。"
 	}
 	return [title,date,body]
 }
