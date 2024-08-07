@@ -25,10 +25,10 @@ function setSerect(){
 }
 
 function content(){
-    let field1 = document.getELementById("field1").value
-    let field2 = document.getELementById("field2").value
-    let field3 = document.getELementById("field3").value
-    let field4 = document.getELementById("field4").value
+    let field1 = document.getElementById("field1").value
+    let field2 = document.getElementById("field2").value
+    let field3 = document.getElementById("field3").value
+    let field4 = document.getElementById("field4").value
     if(field1 !== "" && idArray.includes(field1) === true){
 	let info = dataGet(field1)
 	document.getElementById("title0").innerHTML = info[0]
