@@ -161,24 +161,24 @@ function dataGet(xmlDoc){
 	        for(var a = 0;a<areas.length;a++){
 	          area += areas[a].Name + "(" + items[d].FullStatus + "),"
 	        }
-	        area = area.slice(0,area.length)
-	        kind = kind.slice(0,kind.length)
+	        area = area.slice(0,area.length-1)
+	        kind = kind.slice(0,kind.length-1)
 	        if(area !== "" && kind !== ""){
 	          let changeSf = ""
 	          let changeSfi = ""
 		   if(items[d].ChangeStatus !== "変化無"){
 	             if(items[d].EditingMark === "1"){
 		       changeSf = "に発表されている"
-		       changeSfi = "が解除されました。"
+		       changeSfi = "が解除されました。\n"
 		     }else if(items[d].EditingMark === "0"){
 		       changeSf = "に"
-		       changeSfi = "が発表されました。"
+		       changeSfi = "が発表されました。\n"
 		     }
 		   }else if(items[d].ChangeStatus === "変化無"){
 		     changeSf = "に発表されている"
-		     changeSfi = "は現在も継続して発表されています。"
+		     changeSfi = "は現在も継続して発表されています。\n"
 		   }
-	           body += area + changeSf + kind + changeSfi + "\n"
+	           body += area + changeSf + kind + changeSfi
 	       }
               }else if(title.includes("土砂災害警戒情報") === true){
 	        if(kinds.Name !== "なし"){
