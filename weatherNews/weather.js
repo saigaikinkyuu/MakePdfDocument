@@ -86,6 +86,9 @@ function dataGet(xmlDoc){
 	console.log(title.includes("気象情報"))
 	if(title.includes("気象情報") !== true){
 	  var warnings = xmlDoc.Body.Warning
+	  if (!Array.isArray(warnings)) {
+	    warnings = [warnings];
+	  }
   	  var items = warnings[0].Item
 	  console.log(items.length)
 	  if (!Array.isArray(items)) {
