@@ -156,9 +156,9 @@ function dataGet(xmlDoc){
 	        for(var a = 0;a<areas.length;a++){
 	          area += areas[a].Name + "(" + items[d].FullStatus + "),"
 	        }
-	        area = area.slice(0,area.length-1)
-	        kind = kind.slice(0,kind.length-1)
-		console.log(kind)
+	        area = area.slice(0,area.length)
+	        kind = kind.slice(0,kind.length)
+		console.log(area)
 	        if(area !== "" && kind !== ""){
 	          let changeSf = ""
 	          let changeSfi = ""
