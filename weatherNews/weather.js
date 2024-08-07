@@ -42,7 +42,7 @@ function content(){
 	document.getElementById("content0").style.display = "none"
     }
     if(field2 !== "" && idArray.includes(field2) === true){
-      $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
+      $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field2, function (xmlDoc) {
 	let info = dataGet(xmlDoc)
 	document.getElementById("title1").innerText = info[0]
 	document.getElementById("date1").innerText = info[1]
@@ -53,7 +53,7 @@ function content(){
 	document.getElementById("content1").style.display = "none"
     }
     if(field3 !== "" && idArray.includes(field3) === true){
-      $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
+      $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field3, function (xmlDoc) {
 	let info = dataGet(xmlDoc)
 	document.getElementById("title2").innerText = info[0]
 	document.getElementById("date2").innerText = info[1]
@@ -64,7 +64,7 @@ function content(){
 	document.getElementById("content2").style.display = "none"
     }
     if(field4 !== "" && idArray.includes(field4) === true){
-      $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
+      $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field4, function (xmlDoc) {
 	let info = dataGet(xmlDoc)
 	document.getElementById("title3").innerText = info[0]
 	document.getElementById("date3").innerText = info[1]
