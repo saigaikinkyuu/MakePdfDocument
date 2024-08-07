@@ -107,19 +107,21 @@ function dataGet(xmlDoc){
 	  }
 	  for(var d = 0;d<items.length;d++){
 	      console.log(items[d])
+	      var attentions = ""
+	      var addition = ""
 	      var kinds = items[d].Kind
 	      var areas = items[d].Area
 	      if(title.includes("気象警報・注意報") === true){
 	        for(var i = 0;i<kinds.length;i++){
-	          var addition = ""
-	          if(kind[i].Addition){
+	          addition = ""
+	          if(kind[i].includes("Addition") === true){
 	            var additions = kind[i].Addition
 	            for(var b = 0;b<additions.length;b++){
 	              addition += additions[b].Note + ","
 	            }
 	          }
-	            if(kind[i].Attention){
-	            var attentions = kind[i].Attention
+	            if(kind[i].includes("Attention")){
+	            attentions = kind[i].Attention
 	            for(var c = 0;b<additions.length;c++){
 	              attention += attentions[c].Note  + ","
 	            }
