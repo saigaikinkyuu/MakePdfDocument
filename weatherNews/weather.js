@@ -9,22 +9,18 @@ function date(time){
   return normalDate
 }
 function setSerect(){
-  $.ajax({
-      type: "GET",
-  　   url: "https://www.data.jma.go.jp/developer/xml/feed/extra.xml",
-      dataType: "xml",
-      success: function(xmlDoc) {
-        const entries = xmlDoc.getElementsByTagName("entry");
+  $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=https://www.data.jma.go.jp/developer/xml/feed/extra.xml", function (xmlDoc) {
+        const entries = xmlDoc.entry;
         let dataContent = ""
         for (let i = 0; i < entries.length; i++) {
-          if(entries[i].getElementsByTagName("title") && entries[i].getElementsByTagName("updated") && entries[i].getElementsByTagName("id") && entries[i].getElementsByTagName("author").getElementsByTagName("name") && entries[i].getElementsByTagName("link") && entries[i].getElementsByTagName("content")){
+          if(entries[i].title && entries[i].updated && entries[i].id && entries[i].author.name && entries[i].link && entries[i].content){
             document.getElementById('serect').innerHTML = ""
-            dataContent += "<option value='" + entries[i].getElementsByTagName("id").textContent + "'>" + "[" + entries[i].getElementsByTagName("title").textContent + "]" + date(entries[i].getElementsByTagName("updated").textContent) + "(" + entries[i].getElementsByTagName("author").getElementsByTagName("name").textContent + ")"
-            idArray.push(entries[i].getElementsByTagName("id").textContent)
+            dataContent += "<option value='" + entries[i].id + "'>" + "[" + entries[i].title + "]" + date(entries[i].updated) + "(" + entries[i].author.name + ")"
+            idArray.push(entries[i].id)
           }
         }
         document.getElementById('serect').innerHTML = dataContent
-    },
+    }),
     error: function() {
         console.error("Failed to load XML file.");
     }
@@ -74,25 +70,22 @@ function content(){
     }
 }
 function dataGet(url){
-  fetch(url)
-    .then(response => response.text())
-    .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
-    .then(xmlDoc => {
+  $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + url, function (xmlDoc) {
 	var title = ""
 	var date = ""
 	var body = ""
-	title = xmlDoc.getElementsByTagName("Head").getElementsByTagName("Title").textContent
-	date = date(xmlDoc.getElementsByTagName("Head").getElementsByTagName("ReportDateTime").textContent) + "発表"
+	title = xmlDoc.Head.Title
+	date = date(xmlDoc.Head.ReportDateTime) + "発表"
 	var area = ""
 	var kind = ""
 	if(title.includes("気象情報") !== true){
-	  var warnings = xmlDoc.getElementsByTagName("Body").getElementsByTagName("Warning")
-  	  var items = warnings[0].getElementsByTagName("Item")
+	  var warnings = xmlDoc.Body.Warning
+  	  var items = warnings[0].Item
 	  if(title.includes("土砂災害警戒情報") === true){
-            let headItem = xmlDoc.getElementsByTagName("Head").getElementsByTagName("Headline").getElementsByTagName("Information").getElementsByTagName("Item")
+            let headItem = xmlDoc.Head.Headline.Information.Item
 	    headStatus = ""
 	    for(var e = 0;e<headItem.length;e++){
-	      headStatus += headItem[e].getElementsByTagName("Kind").getElementsByTagName("Name") + "・"
+	      headStatus += headItem[e].Kind.Name + "・"
 	    }
 	    headStatus = headStatus.slice(0,headStatus.lengh-1)
 	    let infoHead = ""
@@ -101,70 +94,70 @@ function dataGet(url){
 	    }else {
 	      infoHead = "土砂災害警戒情報は全解除されました。\n"
 	    }
-	    body += xmlDoc.getElementsByTagName("Body").getElementsByTagName("TargetArea").getElementsByTagName("Name").textContent + "内の地域に土砂災害警戒情報が" + headStatus + "されました。\n" + infoHead
+	    body += xmlDoc.Body.TargetArea.Name + "内の地域に土砂災害警戒情報が" + headStatus + "されました。\n" + infoHead
 	  }else if(title.includes("気象警報・注意報") === true){
-	    body = xmlDoc.getElementsByTagName("Head").getElementsByTagName("Headline").getElementsByTagName("Text").textContent + "\n詳細情報です。"
+	    body = xmlDoc.Head.Headline.Text + "\n詳細情報です。"
 	  }
 	  for(var d = 0;d<items.length;d++){
-	      var kinds = items[d].getElementsByTagName("Kind")
-	      var areas = items[d].getElementsByTagName("Area")
+	      var kinds = items[d]Kind
+	      var areas = items[d].Area
 	      if(title.includes("気象警報・注意報") === true){
 	        for(var i = 0;i<kinds.length;i++){
 	          var addition = ""
-	          if(kind[i].getElementsByTagName("Addition")){
-	            var additions = kind[i].getElementsByTagName("Addition")
+	          if(kind[i].Addition){
+	            var additions = kind[i].Addition
 	            for(var b = 0;b<additions.length;b++){
-	              addition += additions[b].getElementsByTagName("Note").textContent + ","
+	              addition += additions[b].Note + ","
 	            }
 	          }
-	            if(kind[i].getElementsByTagName("Attention")){
-	            var attentions = kind[i].getElementsByTagName("Attention")
+	            if(kind[i].Attention){
+	            var attentions = kind[i].Attention
 	            for(var c = 0;b<additions.length;c++){
-	              attention += attentions[c].getElementsByTagName("Note").textContent  + ","
+	              attention += attentions[c].Note  + ","
 	            }
 	          }
 	          var totalInfo = addition + attention.slice(0,attention.length-1)
 	          if(totalInfo === ""){
-	            kind += kinds[i].getElementsByTagName("Name").textContent + "[" + kinds[i].getElementsByTagName("Status").textContent + "]，"
+	            kind += kinds[i].Name + "[" + kinds[i].Status + "]，"
 	          }else {
-	            kind += kinds[i].getElementsByTagName("Name").textContent + "(" + totalInfo + ")" + "[" + kinds[i].getElementsByTagName("Status").textContent + "]，"
+	            kind += kinds[i].Name + "(" + totalInfo + ")" + "[" + kinds[i].Status + "]，"
 	          }
 	        }
 	        for(var a = 0;a<areas.length;a++){
-	          area += areas[a].getElementsByTagName("Name").textContent + "(" + items[d].getElementsByTagName("FullStatus") + "),"
+	          area += areas[a].Name + "(" + items[d].FullStatus + "),"
 	        }
 	        area = area.slice(0,area.length-1)
 	        kind = kind.slice(0,kind.length-1)
 	        if(area !== "" && kind !== ""){
 	          let changeSf = ""
 	          let changeSfi = ""
-		   if(items[d].getElementsByTagName("ChangeStatus").textContent !== "変化無"){
-	             if(items[d].getElementsByTagName("EditingMark").textContent === "1"){
+		   if(items[d].ChangeStatus !== "変化無"){
+	             if(items[d].EditingMark === "1"){
 		       changeSf = "に発表されている"
 		       changeSfi = "が解除されました。"
-		     }else if(items[d].getElementsByTagName("EditingMark").textContent === "0"){
+		     }else if(items[d].EditingMark === "0"){
 		       changeSf = "に"
 		       changeSfi = "が発表されました。"
 		     }
-		   }else if(items[d].getElementsByTagName("ChangeStatus").textContent === "変化無"){
+		   }else if(items[d].ChangeStatus === "変化無"){
 		     changeSf = "に発表されている"
 		     changeSfi = "は現在も継続して発表されています。"
 		   }
 	           body += area + changeSf + kind + changeSfi + "\n"
 	       }
               }else if(title.includes("土砂災害警戒情報") === true){
-	        if(kinds.getElementsByTagName("Name").textContent !== "なし"){
-	          area = xmlDoc.getElementsByTagName("Body").getElementsByTagName("TargetArea").getElementsByTagName("Name").textContent + areas.getElementsByTagName("Name")
-	          if(kinds.getElementsByTagName("Status") === "発表"){
+	        if(kinds.Name !== "なし"){
+	          area = xmlDoc.Body.TargetArea.Name + areas.Name
+	          if(kinds.Status === "発表"){
 		    body += area + changeSf + kind + changeSfi + "\n"
-		  }else if(kinds.getElementsByTagName("Status") === "解除"){
+		  }else if(kinds.Status === "解除"){
 		    body += area + changeSf + kind + changeSfi + "\n"
 		  }
 	       }
               }
 	  }
 	}else {
-	  body = xmlDoc.getElementsByTagName("Head").getElementsByTagName("Headline").getElementsByTagName("Text").textContent
+	  body = xmlDoc.Head.Headline.Text
 	}
 	return [title,date,body]
     })
