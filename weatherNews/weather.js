@@ -123,6 +123,7 @@ function dataGet(xmlDoc){
 	            }
 	          }
 	          var totalInfo = addition + attention.slice(0,attention.length-1)
+		  console.log(totalInfo)
 	          if(totalInfo === ""){
 	            kind += kinds[i].Name + "[" + kinds[i].Status + "]，"
 	          }else {
