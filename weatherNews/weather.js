@@ -105,6 +105,7 @@ function dataGet(xmlDoc){
 	    body = xmlDoc.Head.Headline.Text + "\n詳細情報です。"
 	  }
 	  for(var d = 0;d<items.length;d++){
+	      console.log(items[d])
 	      var kinds = items[d].Kind
 	      var areas = items[d].Area
 	      if(title.includes("気象警報・注意報") === true){
@@ -129,7 +130,7 @@ function dataGet(xmlDoc){
 	          }else {
 	            kind += kinds[i].Name + "(" + totalInfo + ")" + "[" + kinds[i].Status + "]，"
 	          }
-	        }
+		}
 	        for(var a = 0;a<areas.length;a++){
 	          area += areas[a].Name + "(" + items[d].FullStatus + "),"
 	        }
