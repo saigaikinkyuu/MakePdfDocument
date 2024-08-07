@@ -110,7 +110,7 @@ function dataGet(xmlDoc){
 	  }
 	  for(var d = 0;d<items.length;d++){
 	      console.log(items[d])
-	      var attentions = ""
+	      var attention = ""
 	      var addition = ""
 	      var totalInfo = ""
 	      var kinds = items[d].Kind
