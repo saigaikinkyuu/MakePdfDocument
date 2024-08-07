@@ -152,6 +152,7 @@ function dataGet(xmlDoc){
 	          }else {
 	            kind += kinds[i].Name + "(" + totalInfo + ")" + "[" + kinds[i].Status + "]，"
 	          }
+		  console.log(kind)
 		}
 		}
 	        for(var a = 0;a<areas.length;a++){
