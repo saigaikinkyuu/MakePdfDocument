@@ -112,30 +112,33 @@ function dataGet(xmlDoc){
 	      console.log(items[d])
 	      var attentions = ""
 	      var addition = ""
+	      var totalInfo = ""
 	      var kinds = items[d].Kind
 	      var areas = items[d].Area
 	      if(title.includes("気象警報・注意報") === true){
 	        for(var i = 0;i<kinds.length;i++){
 	          addition = ""
-	          if(kind[i].includes("Addition") === true){
+		  if(kind[i]){
+	          if(kind[i].Addition){
 	            var additions = kind[i].Addition
 	            for(var b = 0;b<additions.length;b++){
 	              addition += additions[b].Note + ","
 	            }
 	          }
-	            if(kind[i].includes("Attention")){
+	          if(kind[i].Attention){
 	            attentions = kind[i].Attention
 	            for(var c = 0;b<additions.length;c++){
 	              attention += attentions[c].Note  + ","
 	            }
 	          }
-	          var totalInfo = addition + attention.slice(0,attention.length-1)
+	          totalInfo = addition + attention.slice(0,attention.length-1)
 		  console.log(totalInfo)
 	          if(totalInfo === ""){
 	            kind += kinds[i].Name + "[" + kinds[i].Status + "]，"
 	          }else {
 	            kind += kinds[i].Name + "(" + totalInfo + ")" + "[" + kinds[i].Status + "]，"
 	          }
+		}
 		}
 	        for(var a = 0;a<areas.length;a++){
 	          area += areas[a].Name + "(" + items[d].FullStatus + "),"
