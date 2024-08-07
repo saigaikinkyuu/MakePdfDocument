@@ -24,13 +24,15 @@ function setSerect(){
     })
 }
 
-function content(){
+async function content(){
     let field1 = document.getElementById("field1").value
     let field2 = document.getElementById("field2").value
     let field3 = document.getElementById("field3").value
     let field4 = document.getElementById("field4").value
     if(field1 !== "" && idArray.includes(field1) === true){
-	let info = dataGet(field1)
+	let [info] = await Promise.all([
+	  dataGet(field1)
+	])
 	console.log(info)
 	document.getElementById("title0").innerHTML = info[0]
 	document.getElementById("date0").innerHTML = info[1]
@@ -67,7 +69,7 @@ function content(){
 	document.getElementById("content3").style.display = "none"
     }
 }
-function dataGet(url){
+async function dataGet(url){
   $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + url, function (xmlDoc) {
 	var title = ""
 	var date = ""
