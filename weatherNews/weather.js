@@ -30,45 +30,52 @@ async function content(){
     let field3 = document.getElementById("field3").value
     let field4 = document.getElementById("field4").value
     if(field1 !== "" && idArray.includes(field1) === true){
-	let info = await dataGet(field1)
+      $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
+	let info = await dataGet(xmlDoc)
 	console.log(info)
 	document.getElementById("title0").innerHTML = info[0]
 	document.getElementById("date0").innerHTML = info[1]
 	document.getElementById("body0").innerHTML = info[2]
 	document.getElementById("content0").style.display = "block"
+      })
     }else if(field1 === ""){
 	document.getElementById("content0").style.display = "none"
     }
     if(field2 !== "" && idArray.includes(field2) === true){
-	let info = dataGet(field2)
+      $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
+	let info = dataGet(xmlDoc)
 	document.getElementById("title1").innerHTML = info[0]
 	document.getElementById("date1").innerHTML = info[1]
 	document.getElementById("body1").innerHTML = info[2]
 	document.getElementById("content1").style.display = "block"
+      })
     }else if(field2 === ""){
 	document.getElementById("content1").style.display = "none"
     }
     if(field3 !== "" && idArray.includes(field3) === true){
-	let info = dataGet(field3)
+      $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
+	let info = dataGet(xmlDoc)
 	document.getElementById("title2").innerHTML = info[0]
 	document.getElementById("date2").innerHTML = info[1]
 	document.getElementById("body2").innerHTML = info[2]
 	document.getElementById("content2").style.display = "block"
+      })
     }else if(field3 === ""){
 	document.getElementById("content2").style.display = "none"
     }
     if(field4 !== "" && idArray.includes(field4) === true){
-	let info = dataGet(field4)
+      $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + field1, function (xmlDoc) {
+	let info = dataGet(xmlDoc)
 	document.getElementById("title3").innerHTML = info[0]
 	document.getElementById("date3").innerHTML = info[1]
 	document.getElementById("body3").innerHTML = info[2]
 	document.getElementById("content3").style.display = "block"
+      })
     }else if(field4 === ""){
 	document.getElementById("content3").style.display = "none"
     }
 }
-async function dataGet(url){
-  $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=" + url, function (xmlDoc) {
+async function dataGet(xmlDoc){
 	var title = ""
 	var date = ""
 	var body = ""
@@ -159,6 +166,5 @@ async function dataGet(url){
 	  body = xmlDoc.Head.Headline.Text
 	}
 	return [title,date,body]
-    })
 }
 setSerect()
