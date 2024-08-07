@@ -155,6 +155,9 @@ function dataGet(xmlDoc){
 		}
 		console.log(areas.length)
 		console.log(areas)
+		if (!Array.isArray(areas)) {
+		  areas = [areas];
+		}
 	        for(var a = 0;a<areas.length;a++){
 	          area += areas[a].Name + "(" + items[d].FullStatus + "),"
 	        }
