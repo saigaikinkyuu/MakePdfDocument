@@ -1,5 +1,5 @@
 var idArray = []
-function date(time){
+function dateTime(time){
   const year = new Date(time).getFullYear()
   const month = ("0" + (new Date(time).getMonth()+1)).slice(-2)
   const date = ("0" + new Date(time).getDate()).slice(-2)
@@ -72,7 +72,7 @@ function dataGet(url){
 	var date = ""
 	var body = ""
 	title = xmlDoc.Head.Title
-	date = date(xmlDoc.Head.ReportDateTime) + "発表"
+	date = dateTime(xmlDoc.Head.ReportDateTime) + "発表"
 	var area = ""
 	var kind = ""
 	if(title.includes("気象情報") !== true){
