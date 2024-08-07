@@ -84,7 +84,7 @@ function dataGet(xmlDoc){
 	var area = ""
 	var kind = ""
 	console.log(title.includes("気象情報"))
-	if(title.includes("気象情報") !== true || title.includes("記録的短時間大雨情報") !== true){
+	if(title.includes("土砂災害警戒情報") === true || title.includes("気象警報・注意報") === true){
 	  var warnings = xmlDoc.Body.Warning
 	  if (!Array.isArray(warnings)) {
 	    warnings = [warnings];
