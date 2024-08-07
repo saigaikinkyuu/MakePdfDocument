@@ -121,13 +121,19 @@ function dataGet(xmlDoc){
 		  if(kinds[i]){
 	          if(kinds[i].Addition){
 	            var additions = kinds[i].Addition
+		    if (!Array.isArray(additions)) {
+		      additions = [additions];
+		    }
 	            for(var b = 0;b<additions.length;b++){
 	              addition += additions[b].Note + ","
 	            }
 	          }
 	          if(kinds[i].Attention){
 	            attentions = kinds[i].Attention
-	            for(var c = 0;b<additions.length;c++){
+		    if (!Array.isArray(attentions)) {
+		      attentions = [attentions];
+		    }
+	            for(var c = 0;b<attentions.length;c++){
 	              attention += attentions[c].Note  + ","
 	            }
 	          }
