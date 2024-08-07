@@ -88,6 +88,9 @@ function dataGet(xmlDoc){
 	  var warnings = xmlDoc.Body.Warning
   	  var items = warnings[0].Item
 	  console.log(items.length)
+	  if (!Array.isArray(items)) {
+	    items = [items];
+	  }
 	  if(title.includes("土砂災害警戒情報") === true){
             let headItem = xmlDoc.Head.Headline.Information.Item
 	    headStatus = ""
