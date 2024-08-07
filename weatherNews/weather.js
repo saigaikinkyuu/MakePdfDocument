@@ -118,15 +118,15 @@ function dataGet(xmlDoc){
 	      if(title.includes("気象警報・注意報") === true){
 	        for(var i = 0;i<kinds.length;i++){
 	          addition = ""
-		  if(kind[i]){
-	          if(kind[i].Addition){
-	            var additions = kind[i].Addition
+		  if(kinds[i]){
+	          if(kinds[i].Addition){
+	            var additions = kinds[i].Addition
 	            for(var b = 0;b<additions.length;b++){
 	              addition += additions[b].Note + ","
 	            }
 	          }
-	          if(kind[i].Attention){
-	            attentions = kind[i].Attention
+	          if(kinds[i].Attention){
+	            attentions = kinds[i].Attention
 	            for(var c = 0;b<additions.length;c++){
 	              attention += attentions[c].Note  + ","
 	            }
