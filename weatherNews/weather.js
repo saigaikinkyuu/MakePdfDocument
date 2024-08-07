@@ -12,6 +12,7 @@ function setSerect(){
   $.getJSON("https://script.google.com/macros/s/AKfycbwcAsjg8lb7DcOjQvgRRBmU0pzGQTXv6tATgv25zt-Sce1id8S6pn09XxRcDsopt4pm/exec?url=https://www.data.jma.go.jp/developer/xml/feed/extra.xml", function (xmlDoc) {
         const entries = xmlDoc.entry;
         let dataContent = ""
+	  console.log(entries.length)
         for (let i = 0; i < entries.length; i++) {
           if(entries[i].title && entries[i].updated && entries[i].id && entries[i].author.name && entries[i].link && entries[i].content){
             document.getElementById('serect').innerHTML = ""
