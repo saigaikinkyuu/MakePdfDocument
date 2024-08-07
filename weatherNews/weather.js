@@ -186,11 +186,7 @@ function dataGet(xmlDoc){
               }else if(title.includes("土砂災害警戒情報") === true){
 	        if(kinds.Name !== "なし"){
 	          area = xmlDoc.Body.TargetArea.Name + areas.Name
-	          if(kinds.Status === "発表"){
-		    body += area + changeSf + kind + changeSfi + "\n"
-		  }else if(kinds.Status === "解除"){
-		    body += area + changeSf + kind + changeSfi + "\n"
-		  }
+		  body += area + "\n"
 	       }
               }
 	  }
