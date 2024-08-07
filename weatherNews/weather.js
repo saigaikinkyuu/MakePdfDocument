@@ -95,7 +95,7 @@ function dataGet(url){
 	    body = xmlDoc.Head.Headline.Text + "\n詳細情報です。"
 	  }
 	  for(var d = 0;d<items.length;d++){
-	      var kinds = items[d]Kind
+	      var kinds = items[d].Kind
 	      var areas = items[d].Area
 	      if(title.includes("気象警報・注意報") === true){
 	        for(var i = 0;i<kinds.length;i++){
