@@ -163,3 +163,4 @@ function dataGet(url){
 	return [title,date,body]
     })
 }
+setSerect()
