@@ -30,9 +30,7 @@ async function content(){
     let field3 = document.getElementById("field3").value
     let field4 = document.getElementById("field4").value
     if(field1 !== "" && idArray.includes(field1) === true){
-	let [info] = await Promise.all([
-	  dataGet(field1)
-	])
+	let info = await dataGet(field1)
 	console.log(info)
 	document.getElementById("title0").innerHTML = info[0]
 	document.getElementById("date0").innerHTML = info[1]
