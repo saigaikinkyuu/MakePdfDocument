@@ -137,7 +137,15 @@ function dataGet(xmlDoc){
 	              attention += attentions[c]  + ","
 	            }
 	          }
-	          totalInfo = addition + attention.slice(0,attention.length-1)
+		  if(addition !== "" && attention !== ""){
+	            totalInfo = addition + attention.slice(0,attention.length-1)
+		  }else if(addition !== ""){
+		    totalInfo = addition.slice(0,attention.length-1)
+		  }else if(attention !== ""){
+		    totalInfo = attention.slice(0,attention.length-1)
+		  }else {
+		    totalInfo = ""
+		  }
 		  console.log(totalInfo)
 	          if(totalInfo === ""){
 	            kind += kinds[i].Name + "[" + kinds[i].Status + "]，"
