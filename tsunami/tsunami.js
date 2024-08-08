@@ -129,7 +129,7 @@ function dataGet(data){
             if(body_body_items[i].MaxHeight){
               if(body_body_items[i].MaxHeight.TsunamiHeight){
                 firstWave_maxHeight_flag = true
-                body_body_item_maxHeight = body_body_items[i].MaxHeight.TsunamiHeight
+                body_body_item_maxHeight = body_body_items[i].MaxHeight.TsunamiHeight + "m"
                 if(body_body_items[i].MaxHeight.TsunamiHeight === "\u003C0.2"){
                   body_body_item_maxHeight = "0.2m未満"
                 }
