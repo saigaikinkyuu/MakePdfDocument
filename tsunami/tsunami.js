@@ -368,7 +368,7 @@ function dataGet(data){
   return [title,date,body]
   }catch(error){
     title = "Unknown Error"
-    date = dateTime(new Date())
+    date = "リクエスト送信時刻：" + dateTime(new Date())
     body = error.message
     return [title,date,body]
   }
