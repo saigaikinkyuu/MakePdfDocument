@@ -309,10 +309,10 @@ function dataGet(data){
 	  }
 	  if(body_body_stations[e].MaxHeight.Revise){
 	    if(body_body_stations[e].MaxHeight.Revise === "追加"){
-              let body_body_maxHeight_first_flag = true
+              body_body_maxHeight_first_flag = true
 	    }
 	    if(body_body_stations[e].MaxHeight.Revise === "更新"){
-              let body_body_maxHeight_update_flag = true
+              body_body_maxHeight_update_flag = true
 	    }
 	  }
 	  if(body_body_maxHeight_first_flag !== true && body_body_maxHeight_update_flag !== true){
