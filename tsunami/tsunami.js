@@ -366,7 +366,7 @@ function dataGet(data){
     }
   }
   return [title,date,body]
-  }.catch(error){
+  }catch(error){
     title = "Unknown Error"
     date = dateTime(new Date())
     body = error.message
