@@ -340,6 +340,7 @@ function dataGet(data){
       let body_body_quake = data.Body.Earthquake
       var body_body_quake_time = ""
       var body_body_quake_hypo = ""
+      var body_body_quake_mag = ""
       if(!Array.array(body_body_quake)){
         body_body_quake = [body_body_quake]
       }
@@ -350,8 +351,17 @@ function dataGet(data){
         }
       }
       if(body_body_quake[0].Magnitude){
-        //magnitude
+        body_body_quake_mag = body_body_quake[0].Magnitude
       }
+    }
+    if(firstWave_arrival_flag === true && firstWave_maxHeight_flag === true){
+      //
+    }else if(firstWave_arrival_flag === true){
+      //
+    }else if(firstWave_maxHeight_flag === true){
+      //
+    }else {
+      //
     }
   }
 	return [title,date,body]
