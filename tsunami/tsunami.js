@@ -276,14 +276,20 @@ function dataGet(data){
         body_body_quake_mag = body_body_quake[0].Magnitude
       }
     }
+    let body_quake_message = ""
+    if(body_head_text.includes("解除") === true || body_head_text.includes("切り替え") === true){
+      body_quake_message = "により、発表されていた"
+    }if(body_head_text.includes("発表") === true){
+      body_quake_message = "により、"
+    }
     if(firstWave_arrival_flag === true && firstWave_maxHeight_flag === true){
-      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の到達時刻と予想される最大波の情報です。\n" + body_body_items_totalKind
+      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震" + body_quake_message + body_head_text + "\n津波到達予想地点の津波の到達時刻と予想される最大波の情報です。\n" + body_body_items_totalKind
     }else if(firstWave_arrival_flag === true){
-      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の到達時刻の情報です。\n" + body_body_items_totalKind
+      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震" + body_quake_message + body_head_text + "\n津波到達予想地点の津波の到達時刻の情報です。\n" + body_body_items_totalKind
     }else if(firstWave_maxHeight_flag === true){
-      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の予想される最大波の情報です。\n" + body_body_items_totalKind
+      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震" + body_quake_message + body_head_text + "\n津波到達予想地点の津波の予想される最大波の情報です。\n" + body_body_items_totalKind
     }else {
-      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の情報です。\n" + body_body_items_totalKind
+      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震" + body_quake_message + body_head_text + "\n津波到達予想地点の情報です。\n" + body_body_items_totalKind
     }
   }
   if(data.Head.Title === "津波観測に関する情報"){
