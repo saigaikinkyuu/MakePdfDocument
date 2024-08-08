@@ -27,7 +27,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
       document.getElementById('serect').innerHTML = ""
       dataContent += "<option value='" + (data[b].ctt).substring(0, 12) + kindN + "'>" + "[" + data[b].ttl + "]" + date(data[b].at) + "(" + data[b].anm + ")"
     }
-    document.getElementById('serect').innerHTML = dataContent
+    document.getElementById('serect').innerHTML = "<option id='example' value='example'>|--ここから項目を選択します--|" + dataContent
     if(areaData.Control && areaData.Head && areaData.Body){
       let control = areaData.Control
       let head = areaData.Head
