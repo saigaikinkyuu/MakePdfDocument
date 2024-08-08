@@ -286,8 +286,41 @@ function dataGet(data){
       body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の情報です。\n" + body_body_items_totalKind
     }
   }
-  if(title === "津波観測に関する情報"){
-    body = "津波の観測情報をお知らせいたします(" + dateTime(new Date()) + ")"
+  if(data.Head.Title === ""){
+    title += "[津波観測に関する情報]"
+    body = "津波の観測情報をお知らせいたします(" + dateTime(new Date()) + ")\n"
+    let body_body_items = data.Body.Observation.Item
+    let body_station_total_info = ""
+    for(var d = 0;d<body_body_items.length;d++){
+      let body_body_stations = body_body_items[d].Station
+      let body_body_maxHeight_date = ""
+      let body_body_maxHeight = ""
+      let body_body_maxHeight_area = ""
+      let body_body_maxHeight_first_flag = false
+      for(var e = 0;e<body_body_stations.length;e++){
+        if(body_body_stations[e].MaxHeight){
+	  body_body_maxHeight_area = body_body_stations[e].MaxHeight.Name
+	  if(body_body_stations[e].MaxHeight.DateTime){
+	    body_body_maxHeight_date = (dateTime(body_body_stations[e].MaxHeight.DateTime)).slice(-6)
+	  }
+	  if(body_body_stations[e].MaxHeight.TsunamiHeight){
+	    body_body_maxHeight = body_body_stations[e].MaxHeight.TsunamiHeight + "m"
+	  }
+	  if(body_body_stations[e].MaxHeight.Revise){
+	    if(body_body_stations[e].MaxHeight.Revise === "追加"){
+              let body_body_maxHeight_first_flag = true
+	    }
+	  }
+	  if(body_body_maxHeight_first_flag !== true){
+	    body_station_total_info += body_body_maxHeight_date + "観測 " + body_body_maxHeight_area + " " + body_body_maxHeight
+	  }else if(body_body_maxHeight_first_flag !== false) {
+	    body_station_total_info += "[追加]" + body_body_maxHeight_date + "観測 " + body_body_maxHeight_area + " " + body_body_maxHeight + "\n"
+	  }
+	}
+      }
+      body_station_total_info = body_station_total_info.slice(0,body_station_total_info.length-2)
+    }
+    body += body_station_total_info 
   }
   return [title,date,body]
   }
