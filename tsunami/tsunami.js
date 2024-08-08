@@ -20,7 +20,7 @@ function setSerect(){
             jsonArray.push(data[i].json)
           }
         }
-        document.getElementById('serect').innerHTML = dataContent
+        document.getElementById('serect').innerHTML = "<option id='example' value='example'>|--ここから項目を選択します--|" + dataContent
     })
 }
 
