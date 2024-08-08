@@ -251,10 +251,10 @@ function dataGet(data){
               body_body_items_totalKind += "【津波予報】\n" + body_body_items_kind4
             }
             if(body_body_items_totalKind.includes("/到達時刻/") === true){
-              body_body_items_totalKind.replace(/到達時刻/g,"")
+              body_body_items_totalKind.replace(/"到達時刻"/g,"")
             }
             if(body_body_items_totalKind.includes("/最大波/") === true){
-              body_body_items_totalKind.replace(/最大波/g,"")
+              body_body_items_totalKind.replace(/"最大波"/g,"")
             }
       }
     }
