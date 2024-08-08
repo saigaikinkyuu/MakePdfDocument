@@ -288,7 +288,7 @@ function dataGet(data){
   }
   if(data.Head.Title === ""){
     title += "[津波観測に関する情報]"
-    body = "津波の観測情報をお知らせいたします(" + dateTime(new Date()) + ")\n"
+    body = "津波の観測情報をお知らせいたします(" + (dateTime(data.Head.TargetDateTime).slice(-10)) + ")\n"
     let body_body_items = data.Body.Observation.Item
     let body_station_total_info = ""
     for(var d = 0;d<body_body_items.length;d++){
