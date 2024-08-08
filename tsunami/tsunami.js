@@ -286,7 +286,7 @@ function dataGet(data){
       body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の情報です。\n" + body_body_items_totalKind
     }
   }
-  if(data.Head.Title === ""){
+  if(data.Head.Title === "津波観測に関する情報"){
     title += "[津波観測に関する情報]"
     body = "津波の観測情報をお知らせいたします(" + (dateTime(data.Head.TargetDateTime).slice(-10)) + ")\n"
     let body_body_items = data.Body.Observation.Item
