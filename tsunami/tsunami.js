@@ -47,7 +47,7 @@ function content(){
 	    	let info = dataGet(xmlDoc)
 	    	document.getElementById("title1").innerText = info[0]
 	    	document.getElementById("date1").innerText = info[1]
-	    	document.getElementById("body1").innerText = info[2]
+	    	document.getElementById("body1").innerHTML = info[2]
 	    	document.getElementById("content1").style.display = "block"
       })
     }else if(field2 === ""){
