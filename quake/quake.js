@@ -277,7 +277,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
       }else if(control.Title === "南海トラフ地震臨時情報"){
         document.getElementById("title" + s).innerHTML = head.Title
         document.getElementById("date" + s).innerHTML = date(head.TargetDateTime) + "発表"
-        document.getElementById("body" + s).innerHTML = head.Headline.Text + "\n" + body.Text 
+        document.getElementById("body" + s).innerHTML = head.Headline.Text + "\n" + body.EarthquakeInfo.Text 
       }
     }
   })
