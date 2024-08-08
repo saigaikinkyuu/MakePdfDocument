@@ -147,7 +147,7 @@ function dataGet(data){
               }
             }
 	    console.log(body_body_item_area + "," + body_body_item_kind + "," + body_body_item_lastKind + "," + body_body_item_maxHeight + "," + body_body_item_firstWave_arrival)
-            if(body_body_item_area && body_body_item_kind !== underfined && body_body_item_lastKind !== underfined && body_body_item_maxHeight !== underfined && body_body_item_firstWave_arrival !== underfined){
+            if(body_body_item_area && body_body_item_kind !== undefined && body_body_item_lastKind !== undefined && body_body_item_maxHeight !== undefined && body_body_item_firstWave_arrival !== undefined){
               if(body_body_item_area !== ""){
                 if(body_body_item_kind !== ""){
                   if(body_body_item_lastKind !== ""){
