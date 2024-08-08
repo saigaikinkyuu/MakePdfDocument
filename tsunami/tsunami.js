@@ -109,7 +109,7 @@ function dataGet(data){
           var body_body_item_lastKind = ""
           var body_body_item_maxHeight = ""
           var body_body_item_firstWave_arrival = ""
-          if(!Array.array(body_body_items)){
+          if(!Array.isArray(body_body_items)){
             body_body_items = [body_body_items]
           }
           for(var i = 0;i<body_body_items.length;i++){
@@ -342,7 +342,7 @@ function dataGet(data){
       var body_body_quake_time = ""
       var body_body_quake_hypo = ""
       var body_body_quake_mag = ""
-      if(!Array.array(body_body_quake)){
+      if(!Array.isArray(body_body_quake)){
         body_body_quake = [body_body_quake]
       }
       body_body_quake_time = body_body_quake[0].OriginTime
