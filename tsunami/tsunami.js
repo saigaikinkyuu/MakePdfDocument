@@ -239,16 +239,16 @@ function dataGet(data){
 	    }
         }
             if(body_body_items_kind1 !== ""){
-              body_body_items_totalKind += "【大津波警報】\n" + body_body_items_kind1.slice(0,body_body_items_kind1.length-2)
+              body_body_items_totalKind += "【大津波警報】\n" + body_body_items_kind1
             }
             if(body_body_items_kind2 !== ""){
-              body_body_items_totalKind += "【津波警報】\n" + body_body_items_kind2.slice(0,body_body_items_kind2.length-2)
+              body_body_items_totalKind += "【津波警報】\n" + body_body_items_kind2
             }
             if(body_body_items_kind3 !== ""){
-              body_body_items_totalKind += "【津波注意報】\n" + body_body_items_kind3.slice(0,body_body_items_kind3.length-2)
+              body_body_items_totalKind += "【津波注意報】\n" + body_body_items_kind3
             }
             if(body_body_items_kind4 !== ""){
-              body_body_items_totalKind += "【津波予報】\n" + body_body_items_kind4.slice(0,body_body_items_kind4.length-2)
+              body_body_items_totalKind += "【津波予報】\n" + body_body_items_kind4
             }
             if(body_body_items_totalKind.includes("/到達時刻/") === true){
               body_body_items_totalKind.replace(/到達時刻/g,"")
