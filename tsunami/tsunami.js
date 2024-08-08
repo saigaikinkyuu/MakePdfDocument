@@ -312,8 +312,8 @@ function dataGet(data){
                   }
                 }
               }
+	      console.log(body_body_items_kind1 + "," + body_body_items_kind2 + "," + body_body_items_kind3 + "," + body_body_items_kind4)
             }
-	    console.log(body_body_items_kind1 + "," + body_body_items_kind2 + "," + body_body_items_kind3 + "," + body_body_items_kind4)
 	  }
             if(body_body_items_kind1 !== ""){
               body_body_items_totalKind += "<span style='text-alighn: center;'>【大津波警報】</span>\n" + body_body_items_kind1.slice(0,body_body_items_kind1.length-5)
