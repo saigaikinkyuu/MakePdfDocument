@@ -297,6 +297,7 @@ function dataGet(data){
       let body_body_maxHeight = ""
       let body_body_maxHeight_area = ""
       let body_body_maxHeight_first_flag = false
+      let body_body_maxHeight_update_flag = false
       for(var e = 0;e<body_body_stations.length;e++){
         if(body_body_stations[e].MaxHeight){
 	  body_body_maxHeight_area = body_body_stations[e].Name
@@ -311,10 +312,12 @@ function dataGet(data){
               let body_body_maxHeight_first_flag = true
 	    }
 	  }
-	  if(body_body_maxHeight_first_flag !== true){
-	    body_station_total_info += body_body_maxHeight_date + "観測 " + body_body_maxHeight_area + " " + body_body_maxHeight
-	  }else if(body_body_maxHeight_first_flag !== false) {
+	  if(body_body_maxHeight_first_flag !== true && body_body_maxHeight_update_flag !== true){
+	    body_station_total_info += body_body_maxHeight_date + "観測 " + body_body_maxHeight_area + " " + body_body_maxHeight + "\n"
+	  }else if(body_body_maxHeight_first_flag === true) {
 	    body_station_total_info += "[追加]" + body_body_maxHeight_date + "観測 " + body_body_maxHeight_area + " " + body_body_maxHeight + "\n"
+	  }else if(body_body_maxHeight_update_flag === true) {
+	    body_station_total_info += "[更新]" + body_body_maxHeight_date + "観測 " + body_body_maxHeight_area + " " + body_body_maxHeight + "\n"
 	  }
 	}
       }
