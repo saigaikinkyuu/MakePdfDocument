@@ -250,6 +250,7 @@ function dataGet(data){
             if(body_body_items_kind4 !== ""){
               body_body_items_totalKind += "<span style='text-alighn: center;'>【津波予報】</span>\n" + body_body_items_kind4.slice(0,body_body_items_kind4.length-5)
             }
+	    let resentence = "\n"
             if(body_body_items_totalKind.includes("/到達時刻/") === true){
               body_body_items_totalKind.replace(/到達時刻/g,"")
             }
@@ -257,7 +258,7 @@ function dataGet(data){
               body_body_items_totalKind.replace(/最大波/g,"")
             }
             if(body_body_items_totalKind.includes("/改行/") === true){
-              body_body_items_totalKind.replace(/改行/g,"\" + "n")
+              body_body_items_totalKind.replace(/改行/g,resentence)
             }
       }
     }
@@ -288,6 +289,9 @@ function dataGet(data){
     }else {
       body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の情報です。\n" + body_body_items_totalKind
     }
+  }
+  if(title === "津波観測に関する情報"){
+    body = "津波の観測情報をお知らせいたします(" + dateTime(new Date()) + ")"
   }
   return [title,date,body]
   }
