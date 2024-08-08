@@ -335,6 +335,7 @@ function dataGet(data){
               body_body_items_totalKind.replace("/*最大波*/","")
             }
             if(body_body_items_totalKind.includes("/*※*/") === true){
+	      console.log("実行")
               body_body_items_totalKind.replace("/*※*/","\n")
             }
         }
