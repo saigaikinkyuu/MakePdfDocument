@@ -299,7 +299,7 @@ function dataGet(data){
       let body_body_maxHeight_first_flag = false
       for(var e = 0;e<body_body_stations.length;e++){
         if(body_body_stations[e].MaxHeight){
-	  body_body_maxHeight_area = body_body_stations[e].MaxHeight.Name
+	  body_body_maxHeight_area = body_body_stations[e].Name
 	  if(body_body_stations[e].MaxHeight.DateTime){
 	    body_body_maxHeight_date = (dateTime(body_body_stations[e].MaxHeight.DateTime)).slice(-6)
 	  }
@@ -318,7 +318,7 @@ function dataGet(data){
 	  }
 	}
       }
-      body_station_total_info = body_station_total_info.slice(0,body_station_total_info.length-2)
+      body_station_total_info = body_station_total_info.slice(0,body_station_total_info.length)
     }
     body += body_station_total_info 
   }
