@@ -257,7 +257,7 @@ function dataGet(data){
               body_body_items_totalKind.replace(/最大波/g,"")
             }
             if(body_body_items_totalKind.includes("/改行/") === true){
-              body_body_items_totalKind.replace(/改行/g,"\n")
+              body_body_items_totalKind.replace(/改行/g,"\" + "n")
             }
       }
     }
