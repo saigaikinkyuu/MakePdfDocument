@@ -290,6 +290,7 @@ function dataGet(data){
     }
   }
   return [title,date,body]
+  }
   }catch(error){
     title = "Unknown Error"
     date = "リクエスト送信時刻：" + dateTime(new Date())
