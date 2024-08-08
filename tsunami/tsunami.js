@@ -289,7 +289,7 @@ function dataGet(data){
   if(data.Head.Title === "津波観測に関する情報"){
     title += "[津波観測に関する情報]"
     body = "津波の観測情報をお知らせいたします(" + (dateTime(data.Head.TargetDateTime).slice(-10)) + ")\n"
-    let body_body_items = data.Body.Observation.Item
+    let body_body_items = data.Body.Tsunami.Observation.Item
     let body_station_total_info = ""
     for(var d = 0;d<body_body_items.length;d++){
       let body_body_stations = body_body_items[d].Station
