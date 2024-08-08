@@ -209,25 +209,25 @@ function dataGet(data){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind4 += body_body_item_firstWave_arrival + " " + body_body_item_area + "" + "" + "\n"
                         }else {
-                          body_body_items_kind4 += " " + body_body_item_area + " " + "/最大波/" + "/n"
+                          body_body_items_kind4 += " " + body_body_item_area + " " + "" + "\n"
                         }
                       }else if(body_body_item_kind === "津波注意報"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind3 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + "" + "\n"
                         }else {
-                          body_body_items_kind3 += " " + body_body_item_area + " " + "/最大波/" + "/n"
+                          body_body_items_kind3 += " " + body_body_item_area + " " + "" + "\n"
                         }
                       }else if(body_body_item_kind === "津波警報"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind2 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + "" + "\n"
                         }else {
-                          body_body_items_kind2 += " " + body_body_item_area + " " + "/最大波/" + "/n"
+                          body_body_items_kind2 += " " + body_body_item_area + " " + "" + "\n"
                         }
                       }else if(body_body_item_kind === "大津波警報：発表"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind1 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + "" + "\n"
                         }else {
-                          body_body_items_kind1 += " " + body_body_item_area + " " + "/最大波/" + "/n"
+                          body_body_items_kind1 += " " + body_body_item_area + " " + "" + "\n"
                         }
                       }
 		    }
