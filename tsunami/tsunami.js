@@ -146,6 +146,7 @@ function dataGet(data){
                 }
               }
             }
+	    console.log(body_body_item_area + "," + body_body_item_kind + "," + body_body_item_lastKind + "," + body_body_item_maxHeight + "," + body_body_item_firstWave_arrival)
             if(body_body_item_area && body_body_item_kind && body_body_item_lastKind && body_body_item_maxHeight && body_body_item_firstWave_arrival){
               if(body_body_item_area !== ""){
                 if(body_body_item_kind !== ""){
