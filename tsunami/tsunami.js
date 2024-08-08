@@ -15,7 +15,7 @@ function setSerect(){
         for (let i = 0; i < data.length; i++) {
           if(data[i].ttl && data[i].at && data[i].json){
             document.getElementById('serect').innerHTML = ""
-            dataContent += "<option value='" + data[i].ctt + "'>" + "[" + data[i].ttl + "]" + dateTime(data[i].at)
+            dataContent += "<option value='" + data[i].ctt + "'>" + "[" + data[i].ttl + "]" + dateTime(data[i].rdt)
             idArray.push(data[i].ctt)
             jsonArray.push(data[i].json)
           }
