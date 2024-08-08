@@ -277,11 +277,11 @@ function dataGet(data){
       }
     }
     if(firstWave_arrival_flag === true && firstWave_maxHeight_flag === true){
-      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の到達時刻と最大波の情報です。\n" + body_body_items_totalKind
+      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の到達時刻と予想される最大波の情報です。\n" + body_body_items_totalKind
     }else if(firstWave_arrival_flag === true){
       body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の到達時刻の情報です。\n" + body_body_items_totalKind
     }else if(firstWave_maxHeight_flag === true){
-      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の最大波の情報です。\n" + body_body_items_totalKind
+      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の予想される最大波の情報です。\n" + body_body_items_totalKind
     }else {
       body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の情報です。\n" + body_body_items_totalKind
     }
