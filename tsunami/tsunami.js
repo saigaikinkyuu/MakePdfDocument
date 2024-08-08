@@ -250,13 +250,13 @@ function dataGet(data){
               body_body_items_totalKind += "<span style='text-alighn: center;'>【津波予報】</span>\n" + body_body_items_kind4.slice(0,body_body_items_kind4.length-5)
             }
             if(body_body_items_totalKind.includes("/到達時刻/") === true){
-              body_body_items_totalKind.replace("/到達時刻/","")
+              body_body_items_totalKind.replace(/到達時刻/g,"")
             }
             if(body_body_items_totalKind.includes("/最大波/") === true){
-              body_body_items_totalKind.replace("/最大波/","")
+              body_body_items_totalKind.replace(/最大波/g,"")
             }
             if(body_body_items_totalKind.includes("/※/") === true){
-              body_body_items_totalKind.replace("/※/","\n")
+              body_body_items_totalKind.replace(/※/g,"\n")
             }
         }
       }
