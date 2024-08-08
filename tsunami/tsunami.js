@@ -79,9 +79,10 @@ function content(){
     }
 }
 function dataGet(data){
-	var title = ""
-	var date = ""
-	var body = ""
+  try{
+  var title = ""
+  var date = ""
+  var body = ""
   var body_head_text = ""
   var body_body_items = ""
   var body_body_items_kind1 = "" //大津波警報
@@ -312,16 +313,16 @@ function dataGet(data){
               }
             }
             if(body_body_items_kind1 !== ""){
-              body_body_items_totalKind += body_body_items_kind1.slice(0,body_body_items_kind1.length-5)
+              body_body_items_totalKind += "<span style='text-alighn: center;'>【大津波警報】</span>\n" + body_body_items_kind1.slice(0,body_body_items_kind1.length-5)
             }
             if(body_body_items_kind2 !== ""){
-              body_body_items_totalKind += body_body_items_kind2.slice(0,body_body_items_kind2.length-5)
+              body_body_items_totalKind += "<span style='text-alighn: center;'>【津波警報】</span>\n" + body_body_items_kind2.slice(0,body_body_items_kind2.length-5)
             }
             if(body_body_items_kind3 !== ""){
-              body_body_items_totalKind += body_body_items_kind3.slice(0,body_body_items_kind3.length-5)
+              body_body_items_totalKind += "<span style='text-alighn: center;'>【津波注意報】</span>\n" + body_body_items_kind3.slice(0,body_body_items_kind3.length-5)
             }
             if(body_body_items_kind4 !== ""){
-              body_body_items_totalKind += body_body_items_kind4.slice(0,body_body_items_kind4.length-5)
+              body_body_items_totalKind += "<span style='text-alighn: center;'>【津波予報】</span>\n" + body_body_items_kind4.slice(0,body_body_items_kind4.length-5)
             }
             if(body_body_items_totalKind.includes("/*到達時刻*/") === true){
               body_body_items_totalKind.replace("/*到達時刻*/","")
@@ -355,15 +356,21 @@ function dataGet(data){
       }
     }
     if(firstWave_arrival_flag === true && firstWave_maxHeight_flag === true){
-      //
+      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の到達時刻と最大波の情報です。\n" + body_body_items_totalKind
     }else if(firstWave_arrival_flag === true){
-      //
+      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の到達時刻の情報です。\n" + body_body_items_totalKind
     }else if(firstWave_maxHeight_flag === true){
-      //
+      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の津波の最大波の情報です。\n" + body_body_items_totalKind
     }else {
-      //
+      body += data.Control.PublishingOffice + "は" + body_body_quake_time + "に" + body_body_quake_hypo + "にて発生した、マグニチュード" + body_body_quake_mag + "の地震により、" + body_head_text + "\n津波到達予想地点の情報です。\n" + body_body_items_totalKind
     }
   }
-	return [title,date,body]
+  return [title,date,body]
+  }.catch(error){
+    title = "Unknown Error"
+    date = dateTime(new Date())
+    body = error.message
+    return [title,date,body]
+  }
 }
 setSerect()
