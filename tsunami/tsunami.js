@@ -312,6 +312,8 @@ function dataGet(data){
                 }
               }
             }
+	    console.log(body_body_items_kind1 + "," + body_body_items_kind2 + "," + body_body_items_kind3 + "," + body_body_items_kind4)
+	  }
             if(body_body_items_kind1 !== ""){
               body_body_items_totalKind += "<span style='text-alighn: center;'>【大津波警報】</span>\n" + body_body_items_kind1.slice(0,body_body_items_kind1.length-5)
             }
@@ -333,7 +335,6 @@ function dataGet(data){
             if(body_body_items_totalKind.includes("/*※*/") === true){
               body_body_items_totalKind.replace("/*※*/","\n")
             }
-          }
         }
       }
     }
@@ -345,7 +346,7 @@ function dataGet(data){
       if(!Array.isArray(body_body_quake)){
         body_body_quake = [body_body_quake]
       }
-      body_body_quake_time = body_body_quake[0].OriginTime
+      body_body_quake_time = dateTime(body_body_quake[0].OriginTime)
       if(body_body_quake[0].Hypocenter){
         if(body_body_quake[0].Hypocenter.Area){
           body_body_quake_hypo = body_body_quake[0].Hypocenter.Area.Name
