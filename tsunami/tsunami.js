@@ -136,8 +136,8 @@ function dataGet(data){
               }
             }
             if(body_body_items[i].FirstHeight){
-              if(body_body_items[i].FirstHeight.arrivalTime){
-                body_body_item_firstWave_arrival = dateTime(body_body_items[i].FirstHeight.arrivalTime)
+              if(body_body_items[i].FirstHeight.ArrivalTime){
+                body_body_item_firstWave_arrival = dateTime(body_body_items[i].FirstHeight.ArrivalTime)
                 firstWave_arrival_flag = true
                 if((body_body_item_firstWave_arrival.slice(0,11)).slice(-3) !== ("0" + new Date().getDate()).slice(-2) + "日"){
                   body_body_item_firstWave_arrival = (body_body_item_firstWave_arrival.slice(0,11)).slice(-3) + " " + body_body_item_firstWave_arrival.slice(-6)
@@ -152,25 +152,25 @@ function dataGet(data){
                 if(body_body_item_kind !== ""){
                   if(body_body_item_lastKind !== ""){
                     if(body_body_item_maxHeight !== ""){
-                      if(body_body_item_lastKind === "津波予報（若干の海面変動）"){
+                      if(body_body_item_kind === "津波予報（若干の海面変動）"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind4 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + body_body_item_maxHeight + "/*※*/"
                         }else {
                           body_body_items_kind4 += "/*到達時刻*/ " + body_body_item_area + " " + body_body_item_maxHeight + "/*※*/"
                         }
-                      }else if(body_body_item_lastKind === "津波注意報"){
+                      }else if(body_body_item_kind === "津波注意報"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind3 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + body_body_item_maxHeight + "/*※*/"
                         }else {
                           body_body_items_kind3 += "/*到達時刻*/ " + body_body_item_area + " " + body_body_item_maxHeight + "/*※*/"
                         }
-                      }else if(body_body_item_lastKind === "津波警報"){
+                      }else if(body_body_item_kind === "津波警報"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind2 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + body_body_item_maxHeight + "/*※*/"
                         }else {
                           body_body_items_kind2 += "/*到達時刻*/ " + body_body_item_area + " " + body_body_item_maxHeight + "/*※*/"
                         }
-                      }else if(body_body_item_lastKind === "大津波警報：発表"){
+                      }else if(body_body_item_kind === "大津波警報：発表"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind1 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + body_body_item_maxHeight + "/*※*/"
                         }else {
@@ -204,25 +204,25 @@ function dataGet(data){
                         }
                       }
                     }else {
-                      if(body_body_item_lastKind === "津波予報（若干の海面変動）"){
+                      if(body_body_item_kind === "津波予報（若干の海面変動）"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind4 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + "/*最大波*/" + "/*※*/"
                         }else {
                           body_body_items_kind4 += "/*到達時刻*/ " + body_body_item_area + " " + "/*最大波*/" + "/*※*/"
                         }
-                      }else if(body_body_item_lastKind === "津波注意報"){
+                      }else if(body_body_item_kind === "津波注意報"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind3 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + "/*最大波*/" + "/*※*/"
                         }else {
                           body_body_items_kind3 += "/*到達時刻*/ " + body_body_item_area + " " + "/*最大波*/" + "/*※*/"
                         }
-                      }else if(body_body_item_lastKind === "津波警報"){
+                      }else if(body_body_item_kind === "津波警報"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind2 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + "/*最大波*/" + "/*※*/"
                         }else {
                           body_body_items_kind2 += "/*到達時刻*/ " + body_body_item_area + " " + "/*最大波*/" + "/*※*/"
                         }
-                      }else if(body_body_item_lastKind === "大津波警報：発表"){
+                      }else if(body_body_item_kind === "大津波警報：発表"){
                         if(body_body_item_firstWave_arrival !== ""){
                           body_body_items_kind1 += body_body_item_firstWave_arrival + " " + body_body_item_area + " " + "/*最大波*/" + "/*※*/"
                         }else {
