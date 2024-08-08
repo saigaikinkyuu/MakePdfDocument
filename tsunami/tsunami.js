@@ -117,6 +117,7 @@ function dataGet(data){
             if(body_body_items[i].Area){
               body_body_item_area = body_body_items[i].Area.Name
             }
+	    console.log(body_body_item_area)
             if(body_body_items[i].Category){
               if(body_body_items[i].Category.Kind){
                 body_body_item_kind = body_body_items[i].Category.Kind.Name
