@@ -20,7 +20,7 @@ function setSerect(){
             idArray.push(entries[i].id)
           }
         }
-        document.getElementById('serect').innerHTML = dataContent
+        document.getElementById('serect').innerHTML = "<option id='example' value='example'>|--ここから項目を選択します--|" + dataContent
     })
 }
 
