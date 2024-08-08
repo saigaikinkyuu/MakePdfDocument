@@ -188,10 +188,13 @@ function dataGet(xmlDoc){
 	  }
 	}else if(title.includes("気象情報") === true || title.includes("記録的短時間大雨情報") === true || title.includes("竜巻注意情報") === true){
 	  body = xmlDoc.Head.Headline.Text
-	}else if(title.includes("発達する熱帯低気圧に関する情報") === true || title.includes("熱中症警戒アラート") === true){
+	}else if(title.includes("発達する熱帯低気圧に関する情報") === true || title.includes("熱中症警戒アラート") === true || title.includes("スモッグ気象情報（光化学オキシダント）") === true){
 	  body = xmlDoc.Body.Comment.Text
 	}else if(title.includes("氾濫警戒情報") === true){
 	  body = xmlDoc.Body.Warning.Item[0].Kind.Property.Text
+	}else if(title.includes("早期天候情報")){
+          let body_items = xmlDoc.Body.MeteorologicalInfos.MeteorologicalInfo.Item
+	  body = xmlDoc.Body.MeteorologicalInfos.MeteorologicalInfo.Item[body_items.length-1].Kind.Property.Text
 	}else {
 	  title += "[未対応情報]"
 	  body = "リクエストされた情報は、対応していない情報です。"
