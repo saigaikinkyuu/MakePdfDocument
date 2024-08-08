@@ -40,6 +40,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
       let hypo = "調査中"
       let coment1 = "調査中"
       let coment2 = "調査中"
+      if(control.Title !== "南海トラフ地震臨時情報"){
       if(control.Title){
           if(control.EditorialOffice){
             rpOffice = control.EditorialOffice
@@ -272,6 +273,11 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           }
         }
         }
+      }
+      }else if(control.Title === "南海トラフ地震臨時情報"){
+        document.getElementById("title" + s).innerHTML = head.Title
+        document.getElementById("date" + s).innerHTML = date(head.TargetDateTime) + "発表"
+        document.getElementById("body" + s).innerHTML = head.Headline.Text + "\n" + body.Text 
       }
     }
   })
