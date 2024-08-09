@@ -156,7 +156,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
             intArea += "震度5強を観測した地域は、" + int6.substring(0, ((int6.length)-1)) + "。"
           }
 	  if(int5 !== ""){
-            intArea += "震度75弱を観測した地域は、" + int5.substring(0, ((int5.length)-1)) + "。"
+            intArea += "震度5弱を観測した地域は、" + int5.substring(0, ((int5.length)-1)) + "。"
           }
 	  if(int4 !== ""){
             intArea += "震度4を観測した地域は、" + int4.substring(0, ((int4.length)-1)) + "。"
@@ -216,7 +216,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
             intArea += "震度5強を観測した地域は、" + int6.substring(0, ((int6.length)-1)) + "。"
           }
 	  if(int5 !== ""){
-            intArea += "震度75弱を観測した地域は、" + int5.substring(0, ((int5.length)-1)) + "。"
+            intArea += "震度5弱を観測した地域は、" + int5.substring(0, ((int5.length)-1)) + "。"
           }
 	  if(int4 !== ""){
             intArea += "震度4を観測した地域は、" + int4.substring(0, ((int4.length)-1)) + "。"
