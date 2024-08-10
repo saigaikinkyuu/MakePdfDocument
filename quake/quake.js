@@ -281,20 +281,20 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
         }
       }
       }else if(control.Title === "南海トラフ地震臨時情報"){
-        document.getElementById("title" + s).innerHTML = head.Title
-        document.getElementById("date" + s).innerHTML = date(head.TargetDateTime) + "発表"
-        document.getElementById("body" + s).innerHTML = head.Headline.Text + "\n" + body.EarthquakeInfo.Text 
+        document.getElementById("title" + s).innerText = head.Title
+        document.getElementById("date" + s).innerText = date(head.TargetDateTime) + "発表"
+        document.getElementById("body" + s).innerText = head.Headline.Text + "\n" + body.EarthquakeInfo.Text 
       }else if(control.Title === "顕著な地震の震源要素更新のお知らせ"){
 	console.log("実行")
-        document.getElementById("title" + s).innerHTML = head.Title
-	document.getElementById("date" + s).innerHTML = date(head.TargetDateTime) + "発表"
+        document.getElementById("title" + s).innerText = head.Title
+	document.getElementById("date" + s).innerText = date(head.TargetDateTime) + "発表"
 	let depth = ""
 	if((body.Earthquake.Hypocenter.Area.Coordinate_WGS).slice(-3) === "+0/"){
 	  depth = "ごく浅い"
 	}else {
           depth = (((body.Earthquake.Hypocenter.Area.Coordinate_WGS).substr((body.Earthquake.Hypocenter.Area.Coordinate_WGS).indexOf('-') + 1)).substr(0, ((body.Earthquake.Hypocenter.Area.Coordinate_WGS).substr((body.Earthquake.Hypocenter.Area.Coordinate_WGS).indexOf('-') + 1)).indexOf('/')))/1000 + "㎞";
 	}
-	document.getElementById("body" + s).innerHTML = head.Headline.Text + "\n更新された情報です。\n" + (date(body.Earthquake.ArrivalTime)).slice(-10) + "ころ、" + body.Earthquake.Hypocenter.Area.Name + "にて、地震がありました。震源の深さは" + depth + "、マグニチュードは" + body.Earthquake.Magnitude + "となっています。"
+	document.getElementById("body" + s).innerText = head.Headline.Text + "\n更新された情報です。\n" + (date(body.Earthquake.ArrivalTime)).slice(-10) + "ころ、" + body.Earthquake.Hypocenter.Area.Name + "にて、地震がありました。震源の深さは" + depth + "、マグニチュードは" + body.Earthquake.Magnitude + "となっています。"
       }
     }
   })
