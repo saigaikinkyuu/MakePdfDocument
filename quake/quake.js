@@ -40,6 +40,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
       let hypo = "調査中"
       let coment1 = "調査中"
       let coment2 = "調査中"
+      console.log(control.Title)
       if(control.Title !== "南海トラフ地震臨時情報" || control.Title !== "顕著な地震の震源要素更新のお知らせ"){
       if(control.Title){
           if(control.EditorialOffice){
