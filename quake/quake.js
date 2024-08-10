@@ -41,7 +41,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
       let coment1 = "調査中"
       let coment2 = "調査中"
       console.log(control.Title)
-      if(control.Title !== "南海トラフ地震臨時情報" && control.Title !== "顕著な地震の震源要素更新のお知らせ"){
+      if(control.Title !== "南海トラフ地震臨時情報" && control.Title !== "顕著な地震の震源要素更新のお知らせ" && (control.Title).includes("南海トラフ地震関連解説情報") === false){
       console.log("実行B")
       if(control.Title){
           if(control.EditorialOffice){
@@ -280,7 +280,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
         }
         }
       }
-      }else if(control.Title === "南海トラフ地震臨時情報"){
+      }else if(control.Title === "南海トラフ地震臨時情報" || (control.Title).includes("南海トラフ地震関連解説情報") === true){
         document.getElementById("title" + s).innerText = head.Title
         document.getElementById("date" + s).innerText = date(head.TargetDateTime) + "発表"
         document.getElementById("body" + s).innerText = head.Headline.Text + "\n" + body.EarthquakeInfo.Text 
