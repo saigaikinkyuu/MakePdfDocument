@@ -284,6 +284,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
         document.getElementById("date" + s).innerHTML = date(head.TargetDateTime) + "発表"
         document.getElementById("body" + s).innerHTML = head.Headline.Text + "\n" + body.EarthquakeInfo.Text 
       }else if(control.Title === "顕著な地震の震源要素更新のお知らせ"){
+	console.log("実行")
         document.getElementById("title" + s).innerHTML = head.Title
 	document.getElementById("date" + s).innerHTML = date(head.TargetDateTime) + "発表"
 	let depth = ""
