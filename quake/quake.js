@@ -71,7 +71,7 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
 		  if((body.Earthquake.Hypocenter.Area.Coordinate).slice(-3) === "+0/"){
 		    depth = "ごく浅い"
 		  }else {
-                    depth = (((body.Earthquake.Hypocenter.Area.Coordinate).substr((body.Earthquake.Hypocenter.Area.Coordinate).indexOf('-') + 1)).substr(0, ((body.Earthquake.Hypocenter.Area.Coordinate).substr((body.Earthquake.Hypocenter.Area.Coordinate).indexOf('-') + 1)).indexOf('/')))/1000 + "㎞";
+                    depth = "約" + (((body.Earthquake.Hypocenter.Area.Coordinate).substr((body.Earthquake.Hypocenter.Area.Coordinate).indexOf('-') + 1)).substr(0, ((body.Earthquake.Hypocenter.Area.Coordinate).substr((body.Earthquake.Hypocenter.Area.Coordinate).indexOf('-') + 1)).indexOf('/')))/1000 + "㎞";
 		  }
                 }
               }
