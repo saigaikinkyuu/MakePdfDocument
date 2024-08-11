@@ -195,6 +195,8 @@ function dataGet(xmlDoc){
 	}else if(title.includes("早期天候情報")){
           let body_items = xmlDoc.Body.MeteorologicalInfos.MeteorologicalInfo.Item
 	  body = xmlDoc.Body.MeteorologicalInfos.MeteorologicalInfo.Item[body_items.length-1].Kind.Property.Text
+	}else if((xmlDoc.Control.Title).includes("全般台風情報") === true){
+	  body = xmlDoc.Head.Headline.Text + "\n" + xmlDoc.Body.Comment.Text
 	}else {
 	  title += "[未対応情報]"
 	  body = "リクエストされた情報は、対応していない情報です。"
