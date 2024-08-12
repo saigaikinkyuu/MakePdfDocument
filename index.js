@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("button").addEventListener("click", () => {
     let pathname = location.pathname
-    pathname.replace(/[/ ]/g,"")
-    pathname.replace("MakePdfDocument","")
+    pathname = pathname.replace(/[/ ]/g,"")
+    pathname = pathname.replace("MakePdfDocument","")
     const content = document.querySelector("#content");
     const opt = {
       margin:       0,
