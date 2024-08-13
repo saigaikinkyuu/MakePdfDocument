@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let pathname = location.pathname
     pathname = pathname.replace(/[/ ]/g,"")
     pathname = pathname.replace("MakePdfDocument","")
-    let headName = document.getElementById("title1").textContent
+    let headName = document.getElementById("title0").textContent
     const content = document.querySelector("#content");
     const opt = {
       margin:       0,
