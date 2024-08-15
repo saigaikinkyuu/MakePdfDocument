@@ -195,12 +195,33 @@ function submit(num){
     if(document.getElementById("memo1").value === ""){
       document.getElementById("memo1").style.display = "none"
     }
+    if(document.getElementById("imageMemo1").value === ""){
+      document.getElementById("Img01").style.display = "none"
+    }
+    if(document.getElementById("imageMemo2").value === ""){
+      document.getElementById("Img02").style.display = "none"
+    }
+    if(document.getElementById("imageMemo3").value === ""){
+      document.getElementById("Img03").style.display = "none"
+    }
+    if(document.getElementById("imageMemo4").value === ""){
+      document.getElementById("Img04").style.display = "none"
+    }
   }else {
     document.getElementById("submit_button").setAttribute("onclick","submit(0)")
     document.getElementById("content0").style.border = "1px dashed black"
     document.getElementById("content1").style.border = "1px dashed black"
     document.getElementById("content2").style.border = "1px dashed black"
     document.getElementById("memo1").style.display = "block"
+    if(document.getElementById("imageMemo1").value === ""){
+      document.getElementById("Img01").style.display = "block"
+    }else if(document.getElementById("imageMemo2").value === ""){
+      document.getElementById("Img02").style.display = "block"
+    }else if(document.getElementById("imageMemo3").value === ""){
+      document.getElementById("Img03").style.display = "block"
+    }else if(document.getElementById("imageMemo4").value === ""){
+      document.getElementById("Img04").style.display = "block"
+    }
   }
 }
 // ↑ここまで
