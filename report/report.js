@@ -188,6 +188,7 @@ function delatePicuture(num) {
 // ↓ここから確定ボタンの動作
 function submit(num){
   if(num === 0){
+    document.getElementById("submit_button").setAttribute("onclick","submit(1)")
     document.getElementById("content0").style.border = "1px dashed white"
     document.getElementById("content1").style.border = "1px dashed white"
     document.getElementById("content2").style.border = "1px dashed white"
@@ -195,6 +196,7 @@ function submit(num){
       document.getElementById("memo1").style.display = "none"
     }
   }else {
+    document.getElementById("submit_button").setAttribute("onclick","submit(0)")
     document.getElementById("content0").style.border = "1px dashed black"
     document.getElementById("content1").style.border = "1px dashed black"
     document.getElementById("content2").style.border = "1px dashed black"
