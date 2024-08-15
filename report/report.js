@@ -70,3 +70,93 @@ function content(){
     document.getElementById("number03").textContent = "3/3"
   }
 }
+
+// ↓グローバル関数↓
+const imageInput1 = document.getElementById('imageInput01');
+const previewImage1 = document.getElementById('imageDisplay01');
+const imageInput2 = document.getElementById('imageInput02');
+const previewImage2 = document.getElementById('imageDisplay02');
+const imageInput3 = document.getElementById('imageInput03');
+const previewImage3 = document.getElementById('imageDisplay03');
+const imageInput4 = document.getElementById('imageInput04');
+const previewImage4 = document.getElementById('imageDisplay04');
+// ↑ここまで↑
+imageInput1.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+
+  // 画像ファイルでない場合の処理
+  if (!file.type.match('image.*')) {
+    alert('画像ファイルを選択してください');
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    previewImage1.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+  document.getElementById("Img02").style.display = "block"
+  imageInput1.style.display = "none"
+  previewImage1.style.display = "block"
+});
+imageInput2.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+
+  // 画像ファイルでない場合の処理
+  if (!file.type.match('image.*')) {
+    alert('画像ファイルを選択してください');
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    previewImage2.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+  document.getElementById("Img03").style.display = "block"
+  imageInput2.style.display = "none"
+  previewImage2.style.display = "block"
+});
+imageInput3.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+
+  // 画像ファイルでない場合の処理
+  if (!file.type.match('image.*')) {
+    alert('画像ファイルを選択してください');
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    previewImage3.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+  document.getElementById("Img04").style.display = "block"
+  imageInput3.style.display = "none"
+  previewImage3.style.display = "block"
+});
+imageInput4.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+
+  // 画像ファイルでない場合の処理
+  if (!file.type.match('image.*')) {
+    alert('画像ファイルを選択してください');
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    previewImage4.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+  imageInput4.style.display = "none"
+  previewImage4.style.display = "block"
+});
+
+// ↓画像のキャセル関数
+function delatePicuture(num) {
+  if(num === "1"){
+    document.getElementById("im")
+  }
+}
+// ↑ここまで
