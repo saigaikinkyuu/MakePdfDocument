@@ -95,7 +95,7 @@
     }
     input{
       border: 0px;
-      background-color: white;
+      background-color: #ffffff00;
       font-size: 18px;
       width: 100%;
     }
@@ -126,21 +126,22 @@
         <h3 style="margin-top: 35px;"></h3>
       </div>
       <div id="body">
-        <textarea style="height: 150px; font-size: 18px;" id="tableMemo01">月別地震発生回数及びEEW発表回数は、{Month}月中に発表されたものであり、{NextLast}月に発表されたものに関しては含んでいません。\nまた、第一報の発表回数で、報数をすべて含んだ数ではありません。</textarea>
+        <textarea style="height: 80px; font-size: 18px;" id="tableMemo01">月別地震発生回数及びEEW発表回数は、{Month}月中に発表されたものであり、{NextLast}月に発表されたものに関しては含んでいません。
+また、第一報の発表回数で、報数をすべて含んだ数ではありません。</textarea>
         <div style="display: flex; margin: 0px;">
-          <div style="width: 50%; border: 2px solid black; margin: 0px;"><h3>【月別地震発生回数】</h3></div>
-          <div style="width: 50%; border: 2px solid black; margin: 0px;"><h3>【月別EEW発表回数】</h3></div>
+          <div style="width: 50%; border: 2px solid black; margin: 0px;border-right: 0px; text-align: center;"><h3>【月別地震発生回数】</h3></div>
+          <div style="width: 50%; border: 2px solid black; margin: 0px; text-align: center;"><h3>【月別EEW発表回数】</h3></div>
         </div>
         <div style="display: flex; margin: 0px;">
-          <div style="width: 49.7%; border: 2px solid black; margin: 0px;">
+          <div style="width: 49.7%; border: 2px solid black; margin: 0px;border-right: 0px;border-top: 0px;">
             <div style="display: flex; margin-top: 30px; margin-bottom: 30px;">
-              <div style="width: 20%; border: 2px solid black; margin-left: 10px;"><input type="text" id="table_month_01"></div>
+              <div style="width: 20%; border: 2px solid black; margin-left: 10px;border-right: 0px;"><input type="text" id="table_month_01"></div>
               <div style="width: 80%; border: 2px solid black; margin-right: 10px;"><input type="text" id="table_value_01"></div>
             </div>
           </div>
-          <div style="width: 49.7%; border: 2px solid black; margin: 0px;">
+          <div style="width: 49.7%; border: 2px solid black; margin: 0px;border-top: 0px;">
             <div style="display: flex; margin-top: 30px; margin-bottom: 30px;">
-              <div style="width: 20%; border: 2px solid black; margin-left: 10px;"><input type="text" id="table_month_02"></div>
+              <div style="width: 20%; border: 2px solid black; margin-left: 10px;border-right: 0px;"><input type="text" id="table_month_02"></div>
               <div style="width: 80%; border: 2px solid black; margin-right: 10px;"><input type="text" id="table_value_02"></div>
             </div>
           </div>
