@@ -192,6 +192,15 @@ function submit(num){
     document.getElementById("content0").style.border = "1px dashed white"
     document.getElementById("content1").style.border = "1px dashed white"
     document.getElementById("content2").style.border = "1px dashed white"
+    document.getElementById("tableMemo01_p").value = document.getElementById("tableMemo01").value
+    document.getElementById("memo0_p").value = document.getElementById("memo0").value
+    document.getElementById("memo1_p").value = document.getElementById("memo1").value
+    document.getElementById("tableMemo01_p").style.display = "block"
+    document.getElementById("tableMemo01").style.display = "none"
+    document.getElementById("memo0_p").style.display = "block"
+    document.getElementById("memo0").style.display = "none"
+    document.getElementById("memo1_p").style.display = "block"
+      document.getElementById("memo1").style.display = "none"
     if(document.getElementById("memo1").value === ""){
       document.getElementById("memo1").style.display = "none"
     }
@@ -213,6 +222,12 @@ function submit(num){
     document.getElementById("content1").style.border = "1px dashed black"
     document.getElementById("content2").style.border = "1px dashed black"
     document.getElementById("memo1").style.display = "block"
+    document.getElementById("tableMemo01_p").style.display = "none"
+    document.getElementById("tableMemo01").style.display = "block"
+    document.getElementById("memo0_p").style.display = "none"
+    document.getElementById("memo0").style.display = "block"
+    document.getElementById("memo1_p").style.display = "none"
+      document.getElementById("memo1").style.display = "block"
     if(document.getElementById("imageMemo1").value === ""){
       document.getElementById("Img01").style.display = "block"
     }else if(document.getElementById("imageMemo2").value === ""){
