@@ -81,6 +81,18 @@
     #content{
       /*text-wrap: balance;*/
     }
+    table {
+      border-collapse: collapse;
+      border: 2px solid rgb(140 140 140);
+      font-family: sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+    th,
+    td {
+      border: 1px solid rgb(160 160 160);
+      padding: 8px 10px;
+    }
   </style>
 </head>
 <body>
@@ -101,8 +113,18 @@
         <h3 style="width: 200px; background-color: black; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px;"><b>地震活動解説書<br>(2024.08.01)</b></h3>
         <h3 style="margin-top: 35px;"></h3>
       </div>
-      <p id="date0" style="color:gray;"></p>
-      <p id="body0"></p>
+      <div id="body">
+        <table>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr style="display: flex;">
+            <h3 style="width:30%;"></h3>
+            <h3 style="width:70%;"></h3>
+          </tr>
+        </table>
+      </div>
     </div>
     <div id="content1" style="display: none;">
       <h3 id="title1"></h3>
