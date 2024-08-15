@@ -122,11 +122,12 @@
         <h3 style="margin-bottom: 0px;">地震活動解説書[2024/07/01 板]</h3>
       </div>
       <div style="margin: 0px; display: flex;">
-        <h3 style="width: 300px; background-color: black; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px;"><b>地震活動解説書<br>(2024.08.01)</b></h3>
-        <input type="text" style="margin-top: 35px;">
+        <h3 style="width: 400px; background-color: black; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px;"><b>地震活動解説書<br>(2024.08.01)</b></h3>
+        <input type="text" style="margin-top: 35px;" placeholder="【定型】〇〇年〇〇月〇〇日から同年〇〇月▢▢日までの地震解説">
       </div>
-      <div id="body">
-        <textarea style="height: 80px; font-size: 18px;" id="tableMemo01">月別地震発生回数及びEEW発表回数は、{Month}月中に発表されたものであり、{NextLast}月に発表されたものに関しては含んでいません。
+      <div id="body_regular">
+        <!-- 通常情報 -->
+        <textarea spellcheck="false" autocomplete="off" placeholder="下記テーブルの説明文です。" style="height: 80px; font-size: 18px;" id="tableMemo01">月別地震発生回数及びEEW発表回数は、{Month}月中に発表されたものであり、{NextLast}月に発表されたものに関しては含んでいません。
 また、第一報の発表回数で、報数をすべて含んだ数ではありません。</textarea>
         <div style="display: flex; margin: 0px;">
           <div style="width: 50%; border: 2px solid black; margin: 0px;border-right: 0px; text-align: center;"><h3>【月別地震発生回数】</h3></div>
@@ -146,6 +147,76 @@
             </div>
           </div>
         </div>
+        <!-- ↓ここから地震発生回数順の震源情報 -->
+        <h3>◯地震発生回数の震源地</h3>
+        <p style="text-align: center;">注：ここでは解説期間内の情報のみ下記に表記しています。</p>
+        <div style="display: flex; margin: 0px;">
+          <div style="width: 20%; border: 2px solid black; margin: 0px;border-right: 0px; text-align: center;border-bottom: 0px;"><h3>回数</h3></div>
+          <div style="width: 40%; border: 2px solid black; margin: 0px;text-align: center;border-bottom: 0px;"><h3>震源地</h3></div>
+          <div style="width: 40%; border: 2px solid black; margin: 0px;border-left: 0px; text-align: center;border-bottom: 0px;"><h3>最大震度</h3></div>
+        </div>
+        <div style="display: flex; margin: 0px;">
+          <div style="width: 20%; border: 2px solid black; margin: 0px;border-right: 0px;border-bottom: 0px;">
+            <input type="text" placeholder="回数">
+          </div>
+          <div style="width: 40%; border: 2px solid black; margin: 0px;border-bottom: 0px;">
+            <input type="text" placeholder="震源地">
+          </div>
+          <div style="width: 40%; border: 2px solid black; margin: 0px;border-bottom: 0px;border-left: 0px;">
+            <input type="text" placeholder="最大震度">
+          </div>
+        </div>
+        <div style="display: flex; margin: 0px;">
+          <div style="width: 20%; border: 2px solid black; margin: 0px;border-right: 0px;border-bottom: 0px;">
+            <input type="text" placeholder="回数">
+          </div>
+          <div style="width: 40%; border: 2px solid black; margin: 0px;border-bottom: 0px;">
+            <input type="text" placeholder="震源地">
+          </div>
+          <div style="width: 40%; border: 2px solid black; margin: 0px;border-bottom: 0px;border-left: 0px;">
+            <input type="text" placeholder="最大震度">
+          </div>
+        </div>
+        <div style="display: flex; margin: 0px;">
+          <div style="width: 20%; border: 2px solid black; margin: 0px;border-right: 0px;border-bottom: 0px;">
+            <input type="text" placeholder="回数">
+          </div>
+          <div style="width: 40%; border: 2px solid black; margin: 0px;border-bottom: 0px;">
+            <input type="text" placeholder="震源地">
+          </div>
+          <div style="width: 40%; border: 2px solid black; margin: 0px;border-bottom: 0px;border-left: 0px;">
+            <input type="text" placeholder="最大震度">
+          </div>
+        </div>
+        <div style="display: flex; margin: 0px;">
+          <div style="width: 20%; border: 2px solid black; margin: 0px;border-right: 0px;">
+            <input type="text" placeholder="回数">
+          </div>
+          <div style="width: 40%; border: 2px solid black; margin: 0px;">
+            <input type="text" placeholder="震源地">
+          </div>
+          <div style="width: 40%; border: 2px solid black; margin: 0px;border-left: 0px;">
+            <input type="text" placeholder="最大震度">
+          </div>
+        </div>
+        <!-- ↑ここまで -->
+        <!-- ↓ここから解説 -->
+        <h3>解説：</h3>
+        <textarea spellcheck="false" autocomplete="off" placeholder="ここに解説情報を入力" style="height: 80px; font-size: 18px;" id="tableMemo01"></textarea>
+        <!-- ↑ここまで -->
+        <!-- ↓ここからフッター -->
+        <div style="display: flex;">
+          <div style="background-color: black; height: 40px; width: 20%;">
+            <h3 id="number01" style="font-size: 40px; text-align: center;"></h3>
+          </div>
+          <div style="height: 40px; width: 80%;">
+            <h3 style="">資料等の情報は次ページに続きます。</h3>
+          </div>
+        </div>
+        <!-- ↑ここまで -->
+      </div>
+      <div id="body_iregular">
+        <!-- 臨時情報 -->
       </div>
     </div>
     <div id="content1" style="display: none;">
