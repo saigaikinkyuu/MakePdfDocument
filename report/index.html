@@ -110,10 +110,7 @@
 <body>
   <button id="button">Download PDF</button>
   <button onclick="content()">更新</button>
-  <input type="text" id="field1"> 
-  <input type="text" id="field2">
-  <input type="text" id="field3">
-  <input type="text" id="field4">
+  <input style="width: 20%;" type="number" id="number"> 
   <select name="list" id="serect"></select>
   <div id="content">
     <div id="content0">
@@ -206,8 +203,8 @@
         <!-- ↑ここまで -->
         <!-- ↓ここからフッター -->
         <div style="display: flex;">
-          <div style="background-color: black; height: 40px; width: 20%;">
-            <h3 id="number01" style="color: white;font-size: 40px; text-align: center;"></h3>
+          <div style="background-color: black; height: 60px; width: 15%;">
+            <h3 id="number01" style="color: white;font-size: 40px; text-align: center;">1/1</h3>
           </div>
         </div>
         <!-- ↑ここまで -->
@@ -217,19 +214,64 @@
       </div>
     </div>
     <div id="content1" style="display: none;">
-      <h3 id="title1"></h3>
-      <p id="date1" style="color:gray;"></p>
-      <p id="body1"></p>
+      <div id="body_regular">
+        <textarea spellcheck="false" autocomplete="off" placeholder="ここに解説情報を入力(追加で入力が必要な場合)" style="height: 50px;font-size: 15px;"></textarea>
+        <h3 style="margin: 0px;">◯資料</h3>
+        <div id="Img01">
+          <div style="border-bottom: 1px dashed bkack;">
+            <input type="text" placeholder="甲/乙 (地震情報)">
+          </div>
+          <div style="boder-bottom: 2px double black;">
+            <input type="file" id="imageInput01">
+            <img style="width: 100%;" src="" id="imageDisplay01">
+          </div>
+        </div>
+        <div id="Img02">
+          <div style="border-bottom: 1px dashed bkack;">
+            <input type="text" placeholder="甲/乙 (地震情報)">
+          </div>
+          <div style="boder-bottom: 2px double black;">
+            <input type="file" id="imageInput02">
+            <img style="width: 100%;" src="" id="imageDisplay02">
+          </div>
+        </div>
+        <!-- ↓ここからフッター -->
+        <div style="display: flex;">
+          <div style="background-color: black; height: 60px; width: 15%;">
+            <h3 id="number02" style="color: white;font-size: 40px; text-align: center;">1/1</h3>
+          </div>
+        </div>
+        <!-- ↑ここまで -->
+      </div>
     </div>
     <div id="content2" style="display: none;">
-      <h3 id="title2"></h3>
-      <p id="date2" style="color:gray;"></p>
-      <p id="body2"></p>
-    </div>
-    <div id="content3" style="display: none;">
-      <h3 id="title3"></h3>
-      <p id="date3" style="color:gray;"></p>
-      <p id="body3"></p>
+      <div id="body_regular">
+        <div id="Img03">
+          <div style="border-bottom: 1px dashed bkack;">
+            <input type="text" placeholder="甲/乙 (地震情報)">
+          </div>
+          <div style="boder-bottom: 2px double black;">
+            <input type="file" id="imageInput03">
+            <img style="width: 100%;" src="" id="imageDisplay03">
+          </div>
+        </div>
+        <div id="Img04">
+          <div style="border-bottom: 1px dashed bkack;">
+            <input type="text" placeholder="甲/乙 (地震情報)">
+          </div>
+          <div style="boder-bottom: 2px double black;">
+            <input type="file" id="imageInput03">
+            <img style="width: 100%;" src="" id="imageDisplay03">
+          </div>
+        </div>
+        <!-- ↓ここからフッター -->
+        <div style="display: flex;">
+          <div style="background-color: black; height: 60px; width: 15%;">
+            <h3 id="number02" style="color: white;font-size: 40px; text-align: center;">1/1</h3>
+          </div>
+        </div>
+        <!-- ↑ここまで -->
+      </div>
     </div>
   </div>
 </body>
