@@ -14,13 +14,13 @@ function first(){
       month = 12
     }
     if(month <= 7){
-      if((month % 2) === 0){
+      if((month % 2) !== 0){
         date = 31
       }else {
         date = 30
       }
     }else {
-      if((month % 2) !== 0){
+      if((month % 2) === 0){
         date = 31
       }else {
         date = 30
