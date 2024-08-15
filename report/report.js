@@ -184,3 +184,21 @@ function delatePicuture(num) {
   }
 }
 // ↑ここまで
+
+// ↓ここから確定ボタンの動作
+function submit(num){
+  if(num === 0){
+    document.getElementById("content0").style.border = "1px dashed white"
+    document.getElementById("content1").style.border = "1px dashed white"
+    document.getElementById("content2").style.border = "1px dashed white"
+    if(document.getElementById("memo1").value === ""){
+      document.getElementById("memo1").style.display = "none"
+    }
+  }else {
+    document.getElementById("content0").style.border = "1px dashed black"
+    document.getElementById("content1").style.border = "1px dashed black"
+    document.getElementById("content2").style.border = "1px dashed black"
+    document.getElementById("memo1").style.display = "block"
+  }
+}
+// ↑ここまで
