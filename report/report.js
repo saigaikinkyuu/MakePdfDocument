@@ -48,6 +48,8 @@ function first(){
   document.getElementById("table_month_01").value = month(0)
   document.getElementById("table_month_02").value = month(0)
 }
+
+first()
 // ↑ここまで
 
 function content(){
