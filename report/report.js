@@ -156,7 +156,31 @@ imageInput4.addEventListener('change', function(event) {
 // ↓画像のキャセル関数
 function delatePicuture(num) {
   if(num === "1"){
-    document.getElementById("im")
+    imageInput1.style.display = "block"
+    previewImage1.style.display = "none"
+    previewImage1.src = ""
+    imageInput1.value = ""
+    document.getElementById("Img02").style.display = "none"
+    document.getElementById("Img03").style.display = "none"
+    document.getElementById("Img04").style.display = "none"
+  }else if(num === "2"){
+    imageInput2.style.display = "block"
+    previewImage2.style.display = "none"
+    previewImage2.src = ""
+    imageInput2.value = ""
+    document.getElementById("Img03").style.display = "none"
+    document.getElementById("Img04").style.display = "none"
+  }else if(num === "3"){
+    imageInput3.style.display = "block"
+    previewImage3.style.display = "none"
+    previewImage3.src = ""
+    imageInput3.value = ""
+    document.getElementById("Img04").style.display = "none"
+  }else if(num === "4"){
+    imageInput4.style.display = "block"
+    previewImage4.style.display = "none"
+    previewImage4.src = ""
+    imageInput4.value = ""
   }
 }
 // ↑ここまで
