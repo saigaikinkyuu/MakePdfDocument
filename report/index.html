@@ -131,6 +131,7 @@
         <div style="height: 795px;">
         <textarea spellcheck="false" autocomplete="off" placeholder="下記テーブルの説明文です。" style="height: 80px; font-size: 18px;" id="tableMemo01">月別地震発生回数及びEEW発表回数は、{Month}月中に発表されたものであり、{NextLast}月に発表されたものに関しては含んでいません。
 また、第一報の発表回数で、報数をすべて含んだ数ではありません。</textarea>
+        <p id="tableMemo01_p" style="height: 80px; font-size: 18px; margin: 0px;display: none;"></p>
         <div style="display: flex; margin: 0px;">
           <div style="width: 50%; border: 2px solid black; margin: 0px;border-right: 0px; text-align: center;"><h3 style="margin: 0px;">【月別地震発生回数】</h3></div>
           <div style="width: 50%; border: 2px solid black; margin: 0px; text-align: center;"><h3 style="margin: 0px;">【月別EEW発表回数】</h3></div>
@@ -204,7 +205,8 @@
         <!-- ↑ここまで -->
         <!-- ↓ここから解説 -->
         <h3 style="margin: 0px;">解説：</h3>
-        <textarea spellcheck="false" autocomplete="off" placeholder="ここに解説情報を入力" style="height: 350px;font-size: 15px;"></textarea>
+        <textarea id="memo0" spellcheck="false" autocomplete="off" placeholder="ここに解説情報を入力" style="height: 350px;font-size: 15px;"></textarea>
+        <p id="memo0_p" style="height: 350px;font-size: 15px; margin: 0px;display: none;"></p>
         <!-- ↑ここまで -->
         </div>
         <!-- ↓ここからフッター -->
@@ -223,6 +225,7 @@
       <div id="body_regular">
         <div style="height: 935px;">
         <textarea id="memo1" spellcheck="false" autocomplete="off" placeholder="ここに解説情報を入力(追加で入力が必要な場合)" style="height: 50px;font-size: 15px;"></textarea>
+        <p id="memo1_p" style="height: 350px;font-size: 15px; margin: 0px;display: none;"></p>
         <h3 style="margin: 0px;">◯資料</h3>
         <div id="Img01">
           <div style="border-bottom: 1px dashed black;">
