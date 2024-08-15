@@ -54,19 +54,19 @@ function content(){
     document.getElementById("content0").style.display = "block"
     document.getElementById("content1").style.display = "none"
     document.getElementById("content2").style.display = "none"
-    document.getElementById("number01").style.display = "1/1"
+    document.getElementById("number01").textContent = "1/1"
   }else if(num === "2"){
     document.getElementById("content0").style.display = "block"
     document.getElementById("content1").style.display = "block"
     document.getElementById("content2").style.display = "none"
-    document.getElementById("number01").style.display = "1/2"
-    document.getElementById("number02").style.display = "2/2"
+    document.getElementById("number01").textContent = "1/2"
+    document.getElementById("number02").textContent = "2/2"
   }else if(num === "3"){
     document.getElementById("content0").style.display = "block"
     document.getElementById("content1").style.display = "block"
     document.getElementById("content2").style.display = "block"
-    document.getElementById("number01").style.display = "1/3"
-    document.getElementById("number02").style.display = "2/3"
-    document.getElementById("number03").style.display = "3/3"
+    document.getElementById("number01").textContent = "1/3"
+    document.getElementById("number02").textContent = "2/3"
+    document.getElementById("number03").textContent = "3/3"
   }
 }
