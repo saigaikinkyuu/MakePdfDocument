@@ -49,7 +49,7 @@ function content(){
   var title = document.getElementById("ttl").value
   document.getElementById("head_last").innerHTML = title
   document.getElementById("title").innerText = title
-  var num = document.getElementById("select").value
+  var num = document.getElementById("serect").value
   if(num === "1"){
     document.getElementById("content0").style.display = "block"
     document.getElementById("content1").style.display = "none"
