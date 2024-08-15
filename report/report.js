@@ -1,10 +1,5 @@
 // ↓ここから初期実行
 function first(){
-  function toFullWidthNumber(str) {
-    return str.replace(/[0-9]/g, (s) => {
-      return String.fromCharCode(s.charCodeAt(0) + 65248);
-    });
-  }
   function date(num){
     let month = new Date().getMonth()+num
     if(month === 0){
@@ -41,7 +36,7 @@ function first(){
     return month + "月"
   }
   var title = document.getElementById("ttl").value
-  document.getElementById("head_first").textContent = date(1) +  + new Date().getDate() + "日 " + toFullWidthNumber(new Date().getHours()) + "時　発行"
+  document.getElementById("head_first").textContent = date(1) +  + new Date().getDate() + "日 " + new Date().getHours() + "時　発行"
   document.getElementById("head_last").innerHTML = title
   document.getElementById("title").innerText = title
   document.getElementById("ttl_memo").textContent = date(0) + "1日から同年" + date(0) + lastDate(0) + "日までの地震解説"
