@@ -194,7 +194,7 @@ function dataGet(xmlDoc){
 	  body = xmlDoc.Head.Headline.Text
 	}else if(title.includes("発達する熱帯低気圧に関する情報") === true || title.includes("熱中症警戒アラート") === true || title.includes("スモッグ気象情報（光化学オキシダント）") === true){
 	  body = xmlDoc.Body.Comment.Text
-	}else if(title.includes("氾濫警戒情報") === true){
+	}else if(title.includes("氾濫警戒情報") === true || title.includes("氾濫危険情報") === true){
 	  body = xmlDoc.Body.Warning.Item[0].Kind.Property.Text
 	}else if(title.includes("早期天候情報")){
           let body_items = xmlDoc.Body.MeteorologicalInfos.MeteorologicalInfo.Item
