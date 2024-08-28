@@ -95,7 +95,7 @@ function dataGet(xmlDoc){
 	    items = [items];
 	  }
 	  if(title.includes("土砂災害警戒情報") === true){
-	    let head_Items = xmlDoc.Head.Headline.Information.Item[0]
+	    let head_Items = xmlDoc.Head.Headline.Information.Item
 	    if(!Array.isArray(head_Items)){
 	    head_Items = [head_Items]
 	    }
