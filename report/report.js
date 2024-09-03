@@ -48,7 +48,7 @@ first()
 function content(){
   var title = document.getElementById("ttl").value
   document.getElementById("head_last").innerHTML = title + " [" + new Date().getFullYear() + "/" + ("0" + (new Date().getMonth()+1)).slice(-2) + "/" + ("0" + new Date().getDate()).slice(-2) + " 版]"
-  document.getElementById("title").innerHTML = title + "<br> (" + new Date().getFullYear() + "." + (new Date().getMonth()+1) + "." + new Date().getDate() + ")"
+  document.getElementById("title0").innerHTML = title + "<br> (" + new Date().getFullYear() + "." + (new Date().getMonth()+1) + "." + new Date().getDate() + ")"
   var num = document.getElementById("serect").value
   if(num === "1"){
     document.getElementById("content0").style.display = "block"
