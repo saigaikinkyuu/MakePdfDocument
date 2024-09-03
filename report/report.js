@@ -37,7 +37,7 @@ function first(){
   }
   document.getElementById("head_first").textContent = date(1) +  + new Date().getDate() + "日 " + new Date().getHours() + "時　発行"
   document.getElementById("ttl_memo").value = date(0) + "1日から同年" + date(0) + lastDate(0) + "日までの地震解説"
-  document.getElementById("tableMemo01").value = "月別地震発生回数及びEEW発表回数は、" + month(0) + "月中に発表されたものであり、" + month(-1) + "・" + month(1) + "月に発表されたものに関しては含んでいません。\nまた、第一報の発表回数で、報数をすべて含んだ数ではありません。"
+  document.getElementById("tableMemo01").value = "月別地震発生回数及びEEW発表回数は、" + month(0) + "月中に発表されたものであり、" + month(-1) + "・" + month(1) + "に発表されたものに関しては含んでいません。\nまた、第一報の発表回数で、報数をすべて含んだ数ではありません。"
   document.getElementById("table_month_01").value = month(0)
   document.getElementById("table_month_02").value = month(0)
 }
