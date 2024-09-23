@@ -149,31 +149,31 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           if(head.Title === "震源・震度情報"){
           let intArea = ""
           let maxiArea
-          if(int9 !== "" && int9 !== null){
+          if(int9 !== "" && int9){
             intArea += "震度7を観測した地域は、" + int9.substring(0, ((int9.length)-1)) + "。"
           }
-	  if(int8 !== "" && int8 !== null){
+	  if(int8 !== "" && int8){
             intArea += "震度6強を観測した地域は、" + int8.substring(0, ((int8.length)-1)) + "。"
           }
-	  if(int7 !== "" && int7 !== null){
+	  if(int7 !== "" && int7){
             intArea += "震度6弱を観測した地域は、" + int7.substring(0, ((int7.length)-1)) + "。"
           }
-	  if(int6 !== "" && int6 !== null){
+	  if(int6 !== "" && int6){
             intArea += "震度5強を観測した地域は、" + int6.substring(0, ((int6.length)-1)) + "。"
           }
-	  if(int5 !== "" && int5 !== null){
+	  if(int5 !== "" && int5){
             intArea += "震度5弱を観測した地域は、" + int5.substring(0, ((int5.length)-1)) + "。"
           }
-	  if(int4 !== "" && int4 !== null){
+	  if(int4 !== "" && int4){
             intArea += "震度4を観測した地域は、" + int4.substring(0, ((int4.length)-1)) + "。"
           }
-	  if(int3 !== "" && int3 !== null){
+	  if(int3 !== "" && int3){
             intArea += "震度3を観測した地域は、" + int3.substring(0, ((int3.length)-1)) + "。"
           }
-	  if(int2 !== "" && int2 !== null){
+	  if(int2 !== "" && int2){
             intArea += "震度2を観測した地域は、" + int2.substring(0, ((int2.length)-1)) + "。"
           }
-	  if(int1 !== "" && int1 !== null){
+	  if(int1 !== "" && int1){
             intArea += "震度1を観測した地域は、" + int1.substring(0, ((int1.length)-1)) + "。"
           }
           if(maxi === "1"){
