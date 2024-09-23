@@ -149,6 +149,9 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           if(head.Title === "震源・震度情報"){
           let intArea = "地震の観測情報は発表されていません。"
           let maxiArea
+	  if(int9 && int8 && int7 && int6 && int5 && int4 && int3 && int2 && int1){
+	    intArea = "各地の震度です。"
+	  }
           if(int9 !== "" && int9){
             intArea += "震度7を観測した地域は、" + int9.substring(0, ((int9.length)-1)) + "。"
           }
@@ -198,11 +201,11 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           document.getElementById("title" + s).innerHTML = control.Title
           document.getElementById("date" + s).innerHTML = dateRP + "発行"
           if(hypo !== "調査中" && maxi !== "調査中"){
-            document.getElementById("body" + s).innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、最大震度" + maxi + "の地震がありました。<br>最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。<br>地震の規模を示すマグニチュードは、" + mg + "、震源の深さは、" + depth + "です。<br>" + coment2 + "<br>各地の震度です。" + intArea
+            document.getElementById("body" + s).innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、最大震度" + maxi + "の地震がありました。<br>最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。<br>地震の規模を示すマグニチュードは、" + mg + "、震源の深さは、" + depth + "です。<br>" + coment2 + "<br>" + intArea
           }else if(hypo === "調査中"){
-            document.getElementById("body" + s).innerHTML = dateQuake + "ころ、最大震度" + maxi + "の地震がありました。<br>最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。<br>地震の規模を示すマグニチュードは、" + mg + "、震源の深さは、" + depth + "です。<br>" + coment2 + "<br>各地の震度です。" + intArea
+            document.getElementById("body" + s).innerHTML = dateQuake + "ころ、最大震度" + maxi + "の地震がありました。<br>最大震度" + maxi + "を観測した地域は、" + maxiArea + "となっています。<br>地震の規模を示すマグニチュードは、" + mg + "、震源の深さは、" + depth + "です。<br>" + coment2 + "<br>" + intArea
           }else if(maxi === "調査中"){
-            document.getElementById("body" + s).innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、地震がありました。<br>地震の規模を示すマグニチュードは、" + mg + "、震源の深さは、" + depth + "です。<br>" + coment2 + "<br>各地の震度です。" + intArea
+            document.getElementById("body" + s).innerHTML = dateQuake + "ころ、" + hypo + "を震源とする、地震がありました。<br>地震の規模を示すマグニチュードは、" + mg + "、震源の深さは、" + depth + "です。<br>" + coment2 + "<br>" + intArea
           }else {
             document.getElementById("body" + s).innerHTML = "入電情報がありません。"
           }
