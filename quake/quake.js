@@ -147,10 +147,10 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
           }
           if(control.Title){
           if(head.Title === "震源・震度情報"){
-          let intArea = "地震の観測情報は発表されていません。"
+          let intArea = "各地の震度です。"
           let maxiArea
-	  if(int9 && int8 && int7 && int6 && int5 && int4 && int3 && int2 && int1){
-	    intArea = "各地の震度です。"
+	  if(!int9 && !int8 && !int7 && !int6 && !int5 && !int4 && !int3 && !int2 && !int1){
+	    intArea = "地震の観測情報は発表されていません。"
 	  }
           if(int9 !== "" && int9){
             intArea += "震度7を観測した地域は、" + int9.substring(0, ((int9.length)-1)) + "。"
