@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finger Painting</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #canvasContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    #canvas {
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
+        touch-action: none; /* Disable default touch actions */
+        background-size: cover;
+        background-position: center;
+    }
+
+    .colorPicker1 {
+        position: absolute;
+        top: 0px;
+        left: 95%;
+        transform: translateX(-50%);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .colorPicker2 {
+        position: absolute;
+        top: 0px;
+        left: 96.8%;
+        transform: translateX(-50%);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .colorPicker3 {
+        position: absolute;
+        top: 0px;
+        left: 98.7%;
+        transform: translateX(-50%);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div id="canvasContainer">
+    <input type="file" accept="image/*" id="imageInput">
+    <button id="clearButton">Clear</button>
+    <div class="colorPicker1" id="colorPicker1" data-click="click"></div>
+    <div class="colorPicker2" id="colorPicker2" data-click="None"></div>
+    <div class="colorPicker3" id="colorPicker3" data-click="None"></div>
+    <canvas id="canvas"></canvas>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var canvasContainer = document.getElementById('canvasContainer');
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var imageInput = document.getElementById('imageInput');
+        var colorPicker1 = document.getElementById('colorPicker1');
+        var colorPicker2 = document.getElementById('colorPicker2');
+        var colorPicker3 = document.getElementById('colorPicker3');
+        var clearButton = document.getElementById('clearButton');
+
+        // 高解像度キャンバスのサイズを計算する
+        var dpi = window.devicePixelRatio;
+        canvas.width = canvasContainer.offsetWidth * dpi;
+        canvas.height = canvasContainer.offsetHeight * dpi;
+        canvas.style.width = canvasContainer.offsetWidth + 'px';
+        canvas.style.height = canvasContainer.offsetHeight + 'px';
+        context.scale(dpi, dpi); // キャンバスのコンテキストにスケールを適用
+
+        var isDrawing = false;
+        var currentColor = 'black';
+        colorPicker1.style.backgroundColor = "black"
+        colorPicker2.style.backgroundColor = "red"
+        colorPicker3.style.backgroundColor = "blue"
+        context.lineCap = "round"; // 丸まったペン先を設定
+
+        canvas.addEventListener('touchstart', function(event) {
+            isDrawing = true;
+            var touch = event.touches[0];
+            var x = touch.clientX - canvas.offsetLeft;
+            var y = touch.clientY - canvas.offsetTop;
+            context.beginPath();
+            context.moveTo(x, y);
+        });
+
+        canvas.addEventListener('touchmove', function(event) {
+            event.preventDefault();
+            if (isDrawing) {
+                var touch = event.touches[0];
+                var x = touch.clientX - canvas.offsetLeft;
+                var y = touch.clientY - canvas.offsetTop;
+                context.lineTo(x, y);
+                context.strokeStyle = currentColor; // Color of the line
+                context.lineWidth = 3; // Thickness of the line
+                context.stroke();
+            }
+        });
+
+        canvas.addEventListener('touchend', function(event) {
+            isDrawing = false;
+        });
+
+        imageInput.addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                canvas.style.backgroundImage = 'url(' + e.target.result + ')';
+            };
+            reader.readAsDataURL(file);
+        });
+
+        colorPicker1.addEventListener('click', function() {
+            var click = colorPicker1.dataset.click;
+            if(click === "click"){
+                var newColor = prompt("Enter a color (e.g. red, #ff0000)");
+                if (newColor) {
+                    currentColor = newColor;
+                    colorPicker1.style.backgroundColor = newColor;
+                }
+                colorPicker2.dataset.click = 'None';
+                colorPicker3.dataset.click = 'None';
+            }else{
+                let style = window.getComputedStyle(colorPicker1);
+                let value = style.getPropertyValue('background-color');
+                currentColor = value
+                colorPicker1.dataset.click = 'click';
+                colorPicker2.dataset.click = 'None';
+                colorPicker3.dataset.click = 'None';
+            }
+        });
+        colorPicker2.addEventListener('click', function() {
+            var click = colorPicker2.dataset.click;
+            if(click === "click"){
+                var newColor = prompt("Enter a color (e.g. red, #ff0000)");
+                if (newColor) {
+                    currentColor = newColor;
+                    colorPicker2.style.backgroundColor = newColor;
+                }
+                colorPicker1.dataset.click = 'None';
+                colorPicker3.dataset.click = 'None';
+            }else{
+                let style = window.getComputedStyle(colorPicker2);
+                let value = style.getPropertyValue('background-color');
+                currentColor = value
+                colorPicker2.dataset.click = 'click';
+                colorPicker1.dataset.click = 'None';
+                colorPicker3.dataset.click = 'None';
+            }
+        });
+        colorPicker3.addEventListener('click', function() {
+            var click = colorPicker3.dataset.click;
+            if(click === "click"){
+                var newColor = prompt("Enter a color (e.g. red, #ff0000)");
+                if (newColor) {
+                    currentColor = newColor;
+                    colorPicker3.style.backgroundColor = newColor;
+                }
+                colorPicker1.dataset.click = 'None';
+                colorPicker2.dataset.click = 'None';
+            }else{
+                let style = window.getComputedStyle(colorPicker3);
+                let value = style.getPropertyValue('background-color');
+                currentColor = value
+                colorPicker3.dataset.click = 'click';
+                colorPicker1.dataset.click = 'None';
+                colorPicker2.dataset.click = 'None';
+            }
+        });
+        
+        clearButton.addEventListener('click', function() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        });
+    });
+</script>
+
+</body>
+</html>
