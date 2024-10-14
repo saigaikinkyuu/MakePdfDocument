@@ -72,8 +72,12 @@
       isDrawing = false;
     });
 
-    function drawLine() {
-      // 描画モードにする（この関数は不要になるかも）
+    function downloadPDF() {
+      // PDFをダウンロードする処理
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, 'PNG', 0, 0);
+      pdf.save('output.pdf');
     }
   </script>
 </body>
