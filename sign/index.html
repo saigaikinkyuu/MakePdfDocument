@@ -18,6 +18,29 @@
     const ctx = canvas.getContext('2d');
     let pdfDoc = null;
 
+    // タッチイベントを追加
+    canvas.addEventListener('touchstart', (event) => {
+      isDrawing = true;
+      startX = event.touches[0].clientX - canvas.offsetLeft;
+      startY = event.touches[0].clientY - canvas.offsetTop;
+    });
+
+    canvas.addEventListener('touchmove', (event) => {
+      if (!isDrawing) return;
+      event.preventDefault(); // ページのスクロールなどを防ぐ
+      const currentX = event.touches[0].clientX - canvas.offsetLeft;
+      const currentY = event.touches[0].clientY - canvas.offsetTop;
+      ctx.beginPath();
+      ctx.moveTo(startX, startY);
+      ctx.lineTo(currentX, currentY);
+      ctx.stroke();
+      startX = currentX;
+      startY = currentY;
+    });
+
+    canvas.addEventListener('touchend', () => {
+      isDrawing = false;
+    });
     fileInput.addEventListener('change', (event) => {
       const file = event.target.files[0];
       const reader = new FileReader();
