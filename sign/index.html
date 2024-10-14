@@ -103,9 +103,21 @@
       pdf.save('output.pdf');
     }
 
-    function clearCanvas() {
+    function clearLines() {
+      // Canvasをクリア
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      // ここに、各線の情報をリセットする処理を追加することもできます
+
+      // 画像を再描画
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const arrayBuffer = event.target.result;
+        pdfjsLib.getDocument(arrayBuffer).promise.then((pdf) => {
+          pdfDoc = pdf;
+          renderPage(1); // 1ページ目を表示
+        });
+      };
+      reader.readAsArrayBuffer(file);
     }
   </script>
 </body>
