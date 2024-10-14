@@ -12,7 +12,40 @@
   <button onclick="downloadPDF()">PDFをダウンロード</button>
 
   <script>
-    // ... (先ほどのコードとほぼ同じ)
+    
+    const fileInput = document.getElementById('fileInput');
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    let pdfDoc = null;
+
+    fileInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const arrayBuffer = event.target.result;
+        pdfjsLib.getDocument(arrayBuffer).promise.then((pdf) => {
+          pdfDoc = pdf;
+          renderPage(1); // 1ページ目を表示
+        });
+      };
+      reader.readAsArrayBuffer(file);
+    });
+
+    function renderPage(num) {
+      pdfDoc.getPage(num).then(function(page) {
+        const viewport = page.getViewport({ scale: 1.0 });
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        const renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        page.render(renderContext).promise.then(() => {
+          // 描画完了
+        });
+      });
+    }
 
     let isDrawing = false;
     let startX, startY;
