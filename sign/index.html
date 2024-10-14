@@ -8,7 +8,7 @@
 <body>
   <input type="file" id="fileInput">
   <canvas id="myCanvas"></canvas>
-  <button onclick="drawLine()">線を引く</button>
+  <button onclick="clearCanvas()">線を削除</button>
   <button onclick="downloadPDF()">PDFをダウンロード</button>
 
   <script>
@@ -101,6 +101,11 @@
       const pdf = new jsPDF();
       pdf.addImage(imgData, 'PNG', 0, 0);
       pdf.save('output.pdf');
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // ここに、各線の情報をリセットする処理を追加することもできます
     }
   </script>
 </body>
