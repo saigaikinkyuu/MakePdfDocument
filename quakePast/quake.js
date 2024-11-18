@@ -1,6 +1,6 @@
 function settingField(n,s){
-$.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
-  $.getJSON("https://www.jma.go.jp/bosai/quake/data/" + data[n].json, function (areaData) { 
+$.getJSON("./json/datas.json", function (data) {
+  $.getJSON("./json/" + data[n].json, function (areaData) { 
 	function date(time){
 	  const year = new Date(time).getFullYear()
 	  const month = ("0" + (new Date(time).getMonth()+1)).slice(-2)
@@ -25,9 +25,10 @@ $.getJSON("https://www.jma.go.jp/bosai/quake/data/list.json", function (data) {
 	kindN = "05"
       }
       document.getElementById('serect').innerHTML = ""
-      dataContent += "<option value='" + (data[b].ctt).substring(0, 12) + kindN + "'>" + "[" + data[b].ttl + "]" + date(data[b].at) + "(" + data[b].anm + ")"
+      dataContent += "<option value='" + data[n].time + ("0" + data[b].num).slice(-2) + kindN + "'>" + "[" + data[b].ttl + "]" + date(data[b].at) + "(" + data[b].anm + ")"
     }
     document.getElementById('serect').innerHTML = "<option id='example' value='example'>|--ここから項目を選択します--|" + dataContent
+    //以下更新
     if(areaData.Control && areaData.Head && areaData.Body){
       let control = areaData.Control
       let head = areaData.Head
