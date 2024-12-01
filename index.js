@@ -15,3 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
     html2pdf().from(content).set(opt).save();
   });
 });
+
+window.addEventListener('beforeunload', function(e) {
+  e.preventDefault();
+  e.returnValue = ''; // これは標準で必要な記述
+});
