@@ -9,7 +9,7 @@
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.js" defer></script>
   <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js" defer></script>
   <script src="../index.js" defer></script>
-  <script src="./quake.js" defer></script>
+  <script src="./animation.js" defer></script>
   <script src="./searchQuake.js" defer></script>
   <script src="../select.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -67,6 +67,41 @@
     #content{
       /*text-wrap: balance;*/
     }
+
+    a .button{
+      text-decoration: none;
+      display: block;
+      width: 50%;
+      font-size: 17px;
+      text-align: center;
+      margin-left: 25%;
+      padding: 5px 0px 5px 0px;
+      color: white;
+      background-color: #979797;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: 3px dashed #6d6d6d;
+    }
+
+    #display_cont_list{
+      margin: 30px 10px 30px 10px;
+    }
+
+    #display_cont_list_cov{
+      border: 3px dashed;
+      width: 50%;
+      border-radius: 10px;
+      transition: all 0.5s;
+      opacity: 1;
+    }
+
+    a #edit_hover{
+      text-decoration: none;
+      display: block;
+      background-color: #ffffffde;
+      transition: all 0.5s;
+      opacity: 0;
+    }
   </style>
 </head>
 <body>
@@ -77,11 +112,12 @@
     <option value="pri_time_up">発表時刻（昇順）</option>
     <option value="pri_time_down">発表時刻（降順）</option>
   </select>
-  <div>
-    <h2>表示するコンテンツ</h2>
-    <p id="display_cont_list"></p>
-    <a href="#" id="update">更新</a>
-    <a href="#" id="download">ダウンロード</a>
+  <div id="display_cont_list_cov">
+    <h2 style="text-align: center;">表示するコンテンツ</h2>
+    <p id="display_cont_list">コンテンツがありません</p>
+    <a href="#" id="edit_hover">編集する</a>
+    <a href="#" id="update" class="button">更新</a>
+    <a href="#" id="download" class="button">ダウンロード</a>
   </div>
   <h2 id="key_rep"></h2>
   <div id="content">
