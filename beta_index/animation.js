@@ -12,6 +12,7 @@ document.getElementById("lists_cov").addEventListener("mouseover", (event) => {
 });
 
 document.getElementById("lists_cov").addEventListener("mouseout", (event) => {
+  document.getElementById('edit_hover').style.padding = "0px"
   document.getElementById("lists_cov").style.opacity = 0
   setTimeout(() =>{
     document.getElementById("display_cont_list").style.display = "block"
