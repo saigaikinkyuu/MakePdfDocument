@@ -102,6 +102,10 @@
       transition: all 0.5s;
       opacity: 0;
     }
+
+    #lists_cov{
+      transition: all 0.25s;
+    }
   </style>
 </head>
 <body>
@@ -114,9 +118,9 @@
   </select>
   <div id="display_cont_list_cov">
     <h2 style="text-align: center;">表示するコンテンツ</h2>
-    <div>
+    <div id="lists_cov">
       <p id="display_cont_list">コンテンツがありません</p>
-      <a href="#" id="edit_hover">編集する</a>
+      <a href="#" id="edit_hover" style="none">編集する</a>
     </div>
     <a href="#" id="update" class="button">更新</a>
     <a href="#" id="download" class="button">ダウンロード</a>
