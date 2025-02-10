@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF-作成ツール（総合）</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js" defer></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js" defer></script>
+  <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js" defer></script>
+  <script src="../index.js" defer></script>
+  <script src="./quake.js" defer></script>
+  <script src="./searchQuake.js" defer></script>
+  <script src="../select.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <style>
+    #content1 {
+      margin: 20px;
+      padding: 0 20px 20px;
+      border: 1px dashed;
+      width: 700px;
+    }
+    #content2 {
+      margin: 20px;
+      padding: 0 20px 20px;
+      border: 1px dashed;
+      width: 700px;
+    }
+    #content3 {
+      margin: 20px;
+      padding: 0 20px 20px;
+      border: 1px dashed;
+      width: 700px;
+    }
+    #content0 {
+      margin: 20px;
+      padding: 0 20px 20px;
+      border: 1px dashed;
+      width: 700px;
+    }
+
+    h1 {
+      color: navy;
+    }
+
+    table {
+      border: 1px solid silver;
+      width: 500px;
+      text-align: center;
+    }
+
+    tr:nth-child(even) {
+      background: aliceblue;
+    }
+
+    tr:nth-child(odd) {
+      background: whitesmoke;
+    }
+
+    th {
+      background-color: gainsboro;
+    }
+
+    th, td {
+      padding: 4px;  
+    }
+    #content{
+      /*text-wrap: balance;*/
+    }
+  </style>
+</head>
+<body>
+  <select name="type" id="serect">
+    <option value="pri_1">気象情報優先</option>
+    <option value="pri_2">地震情報優先</option>
+    <option value="pri_3">津波情報優先</option>
+    <option value="pri_time_up">発表時刻（昇順）</option>
+    <option value="pri_time_down">発表時刻（降順）</option>
+  </select>
+  <button id="button">Download PDF</button>
+  <button onclick="searchQuake()">更新</button>
+  <input type="number" id="field1"> 
+  <input type="number" id="field2">
+  <input type="number" id="field3">
+  <input type="number" id="field4">
+  <select name="list" id="serect"></select>
+  <h2 id="key_rep"></h2>
+  <div id="content">
+    <div id="content0">
+      <h3 id="title0"></h3>
+      <p id="date0" style="color:gray;"></p>
+      <p id="body0"></p>
+    </div>
+    <div id="content1" style="display: none;">
+      <h3 id="title1"></h3>
+      <p id="date1" style="color:gray;"></p>
+      <p id="body1"></p>
+    </div>
+    <div id="content2" style="display: none;">
+      <h3 id="title2"></h3>
+      <p id="date2" style="color:gray;"></p>
+      <p id="body2"></p>
+    </div>
+    <div id="content3" style="display: none;">
+      <h3 id="title3"></h3>
+      <p id="date3" style="color:gray;"></p>
+      <p id="body3"></p>
+    </div>
+  </div>
+</body>
+</html>
