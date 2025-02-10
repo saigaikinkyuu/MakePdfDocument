@@ -1,6 +1,6 @@
 document.getElementById("lists_cov").addEventListener("mouseover", (event) => {
   document.getElementById("lists_cov").style.opacity = 0
-  (seTimeout () =>{
+  seTimeout(() =>{
     document.getElementById("lists_cov").style.opacity = 1
     const height_1 = document.getElementById('display_cont_list').clientHeight
     const height_2 = document.getElementById('edit_hover').clientHeight
@@ -12,7 +12,7 @@ document.getElementById("lists_cov").addEventListener("mouseover", (event) => {
 
 document.getElementById("lists_cov").addEventListener("mouseout", (event) => {
   document.getElementById("lists_cov").style.opacity = 0
-  (seTimeout () =>{
+  seTimeout(() =>{
     document.getElementById("lists_cov").style.opacity = 1
     document.getElementById("display_cont_list").style.display = "block"
     document.getElementById("edit_hover").style.display = "none"
